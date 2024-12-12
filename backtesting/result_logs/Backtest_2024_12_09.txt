@@ -1,0 +1,585 @@
+Backtest Configuration:
+------------------------------
+Date: 20241209
+Initial Capital: $6,000.00
+
+Running backtest for 20241209
+==================================================
+Found 5 historical data files in d:\NNE_strategy\data\countermove_dataset
+Processing file: detailed_countermove_analysis_20241205.txt
+Processing file: detailed_countermove_analysis_20241206.txt
+Processing file: detailed_countermove_analysis_20241209.txt
+Processing file: detailed_countermove_analysis_20241210.txt
+Processing file: detailed_countermove_analysis_20241211.txt
+Loaded 385 records for 20241209
+Initial trend determined: DownTrend
+Start price: $26.98
+Trend change detected at 2024-12-09 09:40:00-05:00
+New trend: UpTrend
+Price: $25.62
+Trend change detected at 2024-12-09 10:06:00-05:00
+New trend: DownTrend
+Price: $26.15
+
+Entering SHORT position:
+Time: 2024-12-09 10:07:00-05:00
+Price: $26.21
+Shares: 217
+
+Exiting SHORT position:
+Time: 2024-12-09 10:10:00-05:00
+Entry Price: $26.21
+Exit Price: $26.26
+P/L: $-10.52
+Current Capital: $5989.48
+
+Entering SHORT position:
+Time: 2024-12-09 10:11:00-05:00
+Price: $26.29
+Shares: 216
+Trend change detected at 2024-12-09 10:40:00-05:00
+New trend: UpTrend
+Price: $25.18
+
+Exiting SHORT position:
+Time: 2024-12-09 10:48:00-05:00
+Entry Price: $26.29
+Exit Price: $25.08
+P/L: $261.36
+Current Capital: $6250.84
+
+Entering LONG position:
+Time: 2024-12-09 10:49:00-05:00
+Price: $25.08
+Shares: 227
+
+Exiting LONG position:
+Time: 2024-12-09 10:50:00-05:00
+Entry Price: $25.08
+Exit Price: $25.05
+P/L: $-6.83
+Current Capital: $6244.00
+
+Entering LONG position:
+Time: 2024-12-09 10:51:00-05:00
+Price: $25.06
+Shares: 227
+
+Exiting LONG position:
+Time: 2024-12-09 10:52:00-05:00
+Entry Price: $25.06
+Exit Price: $24.88
+P/L: $-40.86
+Current Capital: $6203.14
+
+Entering LONG position:
+Time: 2024-12-09 10:53:00-05:00
+Price: $25.05
+Shares: 227
+
+Exiting LONG position:
+Time: 2024-12-09 10:54:00-05:00
+Entry Price: $25.05
+Exit Price: $25.03
+P/L: $-4.61
+Current Capital: $6198.53
+
+Entering LONG position:
+Time: 2024-12-09 10:55:00-05:00
+Price: $24.97
+Shares: 228
+Trend change detected at 2024-12-09 10:56:00-05:00
+New trend: DownTrend
+Price: $24.89
+
+Exiting LONG position:
+Time: 2024-12-09 10:57:00-05:00
+Entry Price: $24.97
+Exit Price: $25.00
+P/L: $6.73
+Current Capital: $6205.26
+
+Entering SHORT position:
+Time: 2024-12-09 10:58:00-05:00
+Price: $25.05
+Shares: 227
+
+Exiting SHORT position:
+Time: 2024-12-09 10:59:00-05:00
+Entry Price: $25.05
+Exit Price: $24.98
+P/L: $15.89
+Current Capital: $6221.15
+
+Entering SHORT position:
+Time: 2024-12-09 11:00:00-05:00
+Price: $25.11
+Shares: 227
+
+Exiting SHORT position:
+Time: 2024-12-09 11:01:00-05:00
+Entry Price: $25.11
+Exit Price: $25.20
+P/L: $-20.20
+Current Capital: $6200.95
+
+Entering SHORT position:
+Time: 2024-12-09 11:02:00-05:00
+Price: $25.00
+Shares: 228
+
+Exiting SHORT position:
+Time: 2024-12-09 11:04:00-05:00
+Entry Price: $25.00
+Exit Price: $25.00
+P/L: $1.14
+Current Capital: $6202.09
+
+Entering SHORT position:
+Time: 2024-12-09 11:05:00-05:00
+Price: $25.02
+Shares: 227
+
+Exiting SHORT position:
+Time: 2024-12-09 11:06:00-05:00
+Entry Price: $25.02
+Exit Price: $25.04
+P/L: $-3.25
+Current Capital: $6198.84
+Trend change detected at 2024-12-09 11:17:00-05:00
+New trend: UpTrend
+Price: $24.70
+Trend change detected at 2024-12-09 14:26:00-05:00
+New trend: DownTrend
+Price: $24.67
+
+Entering SHORT position:
+Time: 2024-12-09 14:28:00-05:00
+Price: $24.76
+Shares: 230
+
+Exiting SHORT position:
+Time: 2024-12-09 14:29:00-05:00
+Entry Price: $24.76
+Exit Price: $24.75
+P/L: $1.24
+Current Capital: $6200.08
+
+Entering SHORT position:
+Time: 2024-12-09 14:30:00-05:00
+Price: $24.77
+Shares: 230
+
+Exiting SHORT position:
+Time: 2024-12-09 14:31:00-05:00
+Entry Price: $24.77
+Exit Price: $24.79
+P/L: $-4.19
+Current Capital: $6195.90
+
+Entering SHORT position:
+Time: 2024-12-09 14:32:00-05:00
+Price: $24.79
+Shares: 229
+
+Exiting SHORT position:
+Time: 2024-12-09 14:33:00-05:00
+Entry Price: $24.79
+Exit Price: $24.82
+P/L: $-5.72
+Current Capital: $6190.17
+
+Entering SHORT position:
+Time: 2024-12-09 14:34:00-05:00
+Price: $24.80
+Shares: 229
+
+Exiting SHORT position:
+Time: 2024-12-09 14:35:00-05:00
+Entry Price: $24.80
+Exit Price: $24.76
+P/L: $8.79
+Current Capital: $6198.97
+
+Entering SHORT position:
+Time: 2024-12-09 14:36:00-05:00
+Price: $24.75
+Shares: 230
+
+Exiting SHORT position:
+Time: 2024-12-09 14:38:00-05:00
+Entry Price: $24.75
+Exit Price: $24.77
+P/L: $-4.60
+Current Capital: $6194.37
+
+Entering SHORT position:
+Time: 2024-12-09 14:39:00-05:00
+Price: $24.77
+Shares: 230
+
+Exiting SHORT position:
+Time: 2024-12-09 14:40:00-05:00
+Entry Price: $24.77
+Exit Price: $24.75
+P/L: $3.45
+Current Capital: $6197.82
+
+Entering SHORT position:
+Time: 2024-12-09 14:43:00-05:00
+Price: $24.78
+Shares: 230
+
+Exiting SHORT position:
+Time: 2024-12-09 14:44:00-05:00
+Entry Price: $24.78
+Exit Price: $24.76
+P/L: $2.88
+Current Capital: $6200.69
+
+Entering SHORT position:
+Time: 2024-12-09 14:45:00-05:00
+Price: $24.77
+Shares: 230
+
+Exiting SHORT position:
+Time: 2024-12-09 14:46:00-05:00
+Entry Price: $24.77
+Exit Price: $24.77
+P/L: $-0.94
+Current Capital: $6199.75
+
+Entering SHORT position:
+Time: 2024-12-09 14:47:00-05:00
+Price: $24.75
+Shares: 230
+
+Exiting SHORT position:
+Time: 2024-12-09 14:48:00-05:00
+Entry Price: $24.75
+Exit Price: $24.75
+P/L: $0.00
+Current Capital: $6199.75
+
+Entering SHORT position:
+Time: 2024-12-09 14:49:00-05:00
+Price: $24.77
+Shares: 230
+
+Exiting SHORT position:
+Time: 2024-12-09 14:50:00-05:00
+Entry Price: $24.77
+Exit Price: $24.75
+P/L: $4.02
+Current Capital: $6203.77
+
+Entering SHORT position:
+Time: 2024-12-09 14:54:00-05:00
+Price: $24.74
+Shares: 230
+
+Exiting SHORT position:
+Time: 2024-12-09 14:55:00-05:00
+Entry Price: $24.74
+Exit Price: $24.75
+P/L: $-3.45
+Current Capital: $6200.32
+
+Entering SHORT position:
+Time: 2024-12-09 14:56:00-05:00
+Price: $24.75
+Shares: 230
+
+Exiting SHORT position:
+Time: 2024-12-09 14:57:00-05:00
+Entry Price: $24.75
+Exit Price: $24.84
+P/L: $-19.55
+Current Capital: $6180.77
+
+Entering SHORT position:
+Time: 2024-12-09 14:58:00-05:00
+Price: $24.90
+Shares: 228
+
+Exiting SHORT position:
+Time: 2024-12-09 14:59:00-05:00
+Entry Price: $24.90
+Exit Price: $24.82
+P/L: $18.24
+Current Capital: $6199.01
+
+Entering SHORT position:
+Time: 2024-12-09 15:00:00-05:00
+Price: $24.96
+Shares: 228
+
+Exiting SHORT position:
+Time: 2024-12-09 15:01:00-05:00
+Entry Price: $24.96
+Exit Price: $24.89
+P/L: $16.89
+Current Capital: $6215.91
+
+Entering SHORT position:
+Time: 2024-12-09 15:02:00-05:00
+Price: $24.88
+Shares: 229
+
+Exiting SHORT position:
+Time: 2024-12-09 15:03:00-05:00
+Entry Price: $24.88
+Exit Price: $24.89
+P/L: $-2.29
+Current Capital: $6213.62
+
+Entering SHORT position:
+Time: 2024-12-09 15:04:00-05:00
+Price: $24.95
+Shares: 228
+
+Exiting SHORT position:
+Time: 2024-12-09 15:05:00-05:00
+Entry Price: $24.95
+Exit Price: $25.01
+P/L: $-11.61
+Current Capital: $6202.01
+
+Entering SHORT position:
+Time: 2024-12-09 15:06:00-05:00
+Price: $24.99
+Shares: 228
+
+Exiting SHORT position:
+Time: 2024-12-09 15:07:00-05:00
+Entry Price: $24.99
+Exit Price: $24.98
+P/L: $2.28
+Current Capital: $6204.29
+
+Entering SHORT position:
+Time: 2024-12-09 15:08:00-05:00
+Price: $25.02
+Shares: 227
+
+Exiting SHORT position:
+Time: 2024-12-09 15:09:00-05:00
+Entry Price: $25.02
+Exit Price: $25.05
+P/L: $-6.81
+Current Capital: $6197.48
+
+Entering SHORT position:
+Time: 2024-12-09 15:10:00-05:00
+Price: $25.06
+Shares: 227
+
+Exiting SHORT position:
+Time: 2024-12-09 15:11:00-05:00
+Entry Price: $25.06
+Exit Price: $24.95
+P/L: $23.29
+Current Capital: $6220.77
+
+Entering SHORT position:
+Time: 2024-12-09 15:12:00-05:00
+Price: $24.97
+Shares: 228
+
+Exiting SHORT position:
+Time: 2024-12-09 15:13:00-05:00
+Entry Price: $24.97
+Exit Price: $24.97
+P/L: $0.00
+Current Capital: $6220.77
+
+Entering SHORT position:
+Time: 2024-12-09 15:14:00-05:00
+Price: $25.01
+Shares: 227
+
+Exiting SHORT position:
+Time: 2024-12-09 15:15:00-05:00
+Entry Price: $25.01
+Exit Price: $25.02
+P/L: $-2.27
+Current Capital: $6218.50
+
+Entering SHORT position:
+Time: 2024-12-09 15:16:00-05:00
+Price: $25.00
+Shares: 228
+
+Exiting SHORT position:
+Time: 2024-12-09 15:17:00-05:00
+Entry Price: $25.00
+Exit Price: $24.92
+P/L: $17.10
+Current Capital: $6235.60
+
+Entering SHORT position:
+Time: 2024-12-09 15:18:00-05:00
+Price: $24.99
+Shares: 228
+
+Exiting SHORT position:
+Time: 2024-12-09 15:19:00-05:00
+Entry Price: $24.99
+Exit Price: $25.01
+P/L: $-5.70
+Current Capital: $6229.90
+
+Entering SHORT position:
+Time: 2024-12-09 15:20:00-05:00
+Price: $25.01
+Shares: 227
+
+Exiting SHORT position:
+Time: 2024-12-09 15:21:00-05:00
+Entry Price: $25.01
+Exit Price: $25.01
+P/L: $0.00
+Current Capital: $6229.90
+
+Entering SHORT position:
+Time: 2024-12-09 15:22:00-05:00
+Price: $24.99
+Shares: 228
+
+Exiting SHORT position:
+Time: 2024-12-09 15:23:00-05:00
+Entry Price: $24.99
+Exit Price: $24.92
+P/L: $15.96
+Current Capital: $6245.86
+
+Entering SHORT position:
+Time: 2024-12-09 15:24:00-05:00
+Price: $24.93
+Shares: 228
+
+Exiting SHORT position:
+Time: 2024-12-09 15:25:00-05:00
+Entry Price: $24.93
+Exit Price: $24.98
+P/L: $-10.53
+Current Capital: $6235.33
+
+Entering SHORT position:
+Time: 2024-12-09 15:26:00-05:00
+Price: $25.04
+Shares: 227
+
+Exiting SHORT position:
+Time: 2024-12-09 15:27:00-05:00
+Entry Price: $25.04
+Exit Price: $24.98
+P/L: $12.60
+Current Capital: $6247.93
+
+Entering SHORT position:
+Time: 2024-12-09 15:28:00-05:00
+Price: $24.94
+Shares: 228
+
+Exiting SHORT position:
+Time: 2024-12-09 15:29:00-05:00
+Entry Price: $24.94
+Exit Price: $24.93
+P/L: $1.14
+Current Capital: $6249.07
+
+Entering SHORT position:
+Time: 2024-12-09 15:30:00-05:00
+Price: $24.94
+Shares: 228
+Trend change detected at 2024-12-09 15:31:00-05:00
+New trend: UpTrend
+Price: $25.14
+
+Exiting SHORT position:
+Time: 2024-12-09 15:37:00-05:00
+Entry Price: $24.94
+Exit Price: $25.06
+P/L: $-27.36
+Current Capital: $6221.71
+
+Entering LONG position:
+Time: 2024-12-09 15:38:00-05:00
+Price: $25.07
+Shares: 227
+
+Exiting LONG position:
+Time: 2024-12-09 15:42:00-05:00
+Entry Price: $25.07
+Exit Price: $25.00
+P/L: $-14.76
+Current Capital: $6206.95
+
+Entering LONG position:
+Time: 2024-12-09 15:43:00-05:00
+Price: $25.02
+Shares: 227
+
+Exiting LONG position:
+Time: 2024-12-09 15:44:00-05:00
+Entry Price: $25.02
+Exit Price: $25.03
+P/L: $2.27
+Current Capital: $6209.22
+
+Entering LONG position:
+Time: 2024-12-09 15:45:00-05:00
+Price: $24.97
+Shares: 228
+
+Exiting LONG position:
+Time: 2024-12-09 15:46:00-05:00
+Entry Price: $24.97
+Exit Price: $25.00
+P/L: $6.82
+Current Capital: $6216.04
+
+Entering LONG position:
+Time: 2024-12-09 15:47:00-05:00
+Price: $25.01
+Shares: 227
+
+Exiting LONG position:
+Time: 2024-12-09 15:48:00-05:00
+Entry Price: $25.01
+Exit Price: $25.04
+P/L: $6.31
+Current Capital: $6222.35
+
+Entering LONG position:
+Time: 2024-12-09 15:49:00-05:00
+Price: $25.03
+Shares: 227
+
+Exiting LONG position:
+Time: 2024-12-09 15:59:00-05:00
+Entry Price: $25.03
+Exit Price: $25.21
+P/L: $39.72
+Current Capital: $6262.08
+
+Backtest Results Summary
+========================================
+Date: 20241209
+
+Capital:
+Initial: $6,000.00
+Final: $6,262.08
+Return: 4.37%
+
+Activity:
+Number of Trades: 88
+Number of Trends: 7
+Number of Counter-Moves: 105
+
+Trade Performance:
+Average P/L: $2.98
+Max Profit: $261.36
+Max Loss: $-40.86
+Win Rate: 23.9%

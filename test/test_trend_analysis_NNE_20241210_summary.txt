@@ -1,0 +1,27 @@
+TREND ANALYSIS SUMMARY
+=====================
+
+Trend #0
+Direction: None
+Start: 09:30 @ $24.80
+End: 09:34 @ $24.24
+Duration: 0 days 00:04:00
+Price Change: $-0.56
+----------------------------------------
+
+Trend #1
+Direction: DownTrend
+Start: 09:35 @ $24.24
+End: 14:02 @ $22.92
+Duration: 0 days 04:27:00
+Price Change: $-1.32
+----------------------------------------
+
+Trend #2
+Direction: UpTrend
+Start: 14:03 @ $22.94
+End: 15:59 @ $23.33
+Duration: 0 days 01:56:00
+Price Change: $0.39
+----------------------------------------
+
