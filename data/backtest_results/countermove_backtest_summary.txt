@@ -1,0 +1,50 @@
+Countermove Strategy Backtest Results
+==================================================
+
+Overall Performance:
+Total Days Tested: 8
+Total Trades: 63
+Winning Trades: 21
+Win Rate: 33.3%
+
+Capital and Returns:
+Initial Capital: $6000.00
+Final Capital: $6824.69
+Total P/L: $824.69 (13.74%)
+Maximum Drawdown: $508.47 (7.9%)
+
+
+Daily Results:
+------------------------------
+
+Date: 20241205
+Trades: 8
+P/L: $57.28 (0.95%)
+
+Date: 20241206
+Trades: 6
+P/L: $126.42 (2.11%)
+
+Date: 20241209
+Trades: 6
+P/L: $81.25 (1.35%)
+
+Date: 20241210
+Trades: 0
+P/L: $0.00 (0.00%)
+
+Date: 20241211
+Trades: 6
+P/L: $21.60 (0.36%)
+
+Date: 20241212
+Trades: 21
+P/L: $458.80 (7.65%)
+
+Date: 20241213
+Trades: 13
+P/L: $129.01 (2.15%)
+
+Date: 20241216
+Trades: 3
+P/L: $-49.67 (-0.83%)

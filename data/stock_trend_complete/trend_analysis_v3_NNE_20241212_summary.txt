@@ -1,0 +1,25 @@
+NNE Trend Analysis Summary (v3) for 20241212
+==================================================
+
+Total Trends: 2
+First Point: 10:15 @ $24.54
+Last Point: 15:27 @ $23.01
+
+Significant Trends:
+------------------------------
+
+Trend #1:
+Time: 10:15 -> 11:02
+Price: $24.54 -> $25.20
+Direction: UpTrend
+Change: $0.66
+Duration: 47 minutes
+Significance: 0.52
+
+Trend #2:
+Time: 11:02 -> 15:27
+Price: $25.20 -> $23.01
+Direction: DownTrend
+Change: $-2.19
+Duration: 265 minutes
+Significance: 9.69

@@ -1,0 +1,36 @@
+NNE Countermove Analysis for 20241211
+==================================================
+
+
+Trend #1 Countermove:
+Trend: 10:43 -> 11:37 (UpTrend)
+Trend Change: $0.49
+Countermove at: 11:43
+Countermove Change: $-0.02
+Countermove Duration: 6 minutes
+Countermove Ratio: 3.3%
+Countermove Speed: $0.003/min
+Volume Ratio: 2.05
+Momentum: 0.03
+
+Trend #2 Countermove:
+Trend: 11:37 -> 14:05 (UpTrend)
+Trend Change: $0.93
+Countermove at: 14:07
+Countermove Change: $0.00
+Countermove Duration: 2 minutes
+Countermove Ratio: 0.0%
+Countermove Speed: $0.000/min
+Volume Ratio: 0.16
+Momentum: 0.00
+
+Trend #3 Countermove:
+Trend: 14:05 -> 15:37 (UpTrend)
+Trend Change: $0.93
+Countermove at: 15:59
+Countermove Change: $-0.42
+Countermove Duration: 22 minutes
+Countermove Ratio: 45.6%
+Countermove Speed: $0.019/min
+Volume Ratio: 5.21
+Momentum: 2.21

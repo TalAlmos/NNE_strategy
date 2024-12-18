@@ -1,0 +1,31 @@
+Countermove Analysis Report - NNE 20241205
+================================================================================
+
+Summary:
+----------------------------------------
+Total rows analyzed: 387
+Pullbacks identified: 12
+Rallies identified: 6
+
+Detailed Countermoves:
+--------------------------------------------------------------------------------
+Time          | Trend | Type     | Price Change | Volume
+--------------------------------------------------------------------------------
+09:48:00 | Up    | Pullback | $   nan |    11175
+09:57:00 | Up    | Pullback | $   nan |     8968
+10:11:00 | Up    | Pullback | $   nan |    58312
+10:14:00 | Up    | Pullback | $   nan |    10522
+10:25:00 | Down  | Rally    | $   nan |     8360
+10:45:00 | Down  | Rally    | $   nan |     4530
+11:18:00 | Down  | Rally    | $   nan |     6629
+11:26:00 | Up    | Pullback | $   nan |    19122
+12:10:00 | Up    | Pullback | $   nan |    33199
+12:15:00 | Up    | Pullback | $   nan |     2744
+12:56:00 | Up    | Pullback | $   nan |    32352
+13:03:00 | Up    | Pullback | $   nan |     7913
+13:19:00 | Up    | Pullback | $   nan |     7120
+13:38:00 | Down  | Rally    | $   nan |     3080
+15:30:00 | Down  | Rally    | $   nan |     7958
+15:31:00 | Down  | Rally    | $   nan |    10561
+15:45:00 | Up    | Pullback | $   nan |    10725
+15:49:00 | Up    | Pullback | $   nan |     5685

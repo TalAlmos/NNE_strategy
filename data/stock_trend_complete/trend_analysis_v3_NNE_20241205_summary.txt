@@ -1,0 +1,33 @@
+NNE Trend Analysis Summary (v3) for 20241205
+==================================================
+
+Total Trends: 3
+First Point: 10:00 @ $26.58
+Last Point: 15:17 @ $25.22
+
+Significant Trends:
+------------------------------
+
+Trend #1:
+Time: 10:00 -> 11:49
+Price: $26.58 -> $25.34
+Direction: DownTrend
+Change: $-1.24
+Duration: 109 minutes
+Significance: 2.25
+
+Trend #2:
+Time: 11:49 -> 13:20
+Price: $25.34 -> $25.70
+Direction: UpTrend
+Change: $0.36
+Duration: 91 minutes
+Significance: 0.54
+
+Trend #3:
+Time: 13:20 -> 15:17
+Price: $25.70 -> $25.22
+Direction: DownTrend
+Change: $-0.48
+Duration: 117 minutes
+Significance: 0.93

@@ -1,0 +1,36 @@
+NNE Countermove Analysis for 20241205
+==================================================
+
+
+Trend #1 Countermove:
+Trend: 10:00 -> 11:49 (DownTrend)
+Trend Change: $-1.24
+Countermove at: 12:19
+Countermove Change: $0.59
+Countermove Duration: 30 minutes
+Countermove Ratio: 47.6%
+Countermove Speed: $0.020/min
+Volume Ratio: 0.79
+Momentum: 0.47
+
+Trend #2 Countermove:
+Trend: 11:49 -> 13:20 (UpTrend)
+Trend Change: $0.36
+Countermove at: 13:31
+Countermove Change: $-0.35
+Countermove Duration: 11 minutes
+Countermove Ratio: 97.2%
+Countermove Speed: $0.032/min
+Volume Ratio: 0.44
+Momentum: 0.15
+
+Trend #3 Countermove:
+Trend: 13:20 -> 15:17 (DownTrend)
+Trend Change: $-0.48
+Countermove at: 15:44
+Countermove Change: $0.20
+Countermove Duration: 27 minutes
+Countermove Ratio: 42.0%
+Countermove Speed: $0.007/min
+Volume Ratio: 2.48
+Momentum: 0.50

@@ -27,13 +27,5 @@ var/
 *.swo
 
 # Project specific
-data/stock_raw_data/*
-!data/stock_raw_data/.gitkeep
-data/countermove_dataset/*
-!data/countermove_dataset/.gitkeep
-data/stock_trend_complete/*
-!data/stock_trend_complete/.gitkeep
-
-# Logs and databases
 *.log
-*.sqlite 
+.env

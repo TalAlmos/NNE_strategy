@@ -1,0 +1,23 @@
+NNE Countermove Analysis Summary
+==================================================
+
+Total Days Analyzed: 8
+Total Countermoves: 29
+
+Countermove Ratio Statistics:
+Average: 310.5%
+Median: 100.0%
+Max: 2416.6%
+Min: 0.0%
+
+Countermove Speed Statistics:
+Average: $0.034/min
+Median: $0.021/min
+
+Volume Ratio Statistics:
+Average: 2.07
+Median: 1.58
+
+Duration Statistics:
+Average: 15 minutes
+Median: 14 minutes

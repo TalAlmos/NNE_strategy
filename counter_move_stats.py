@@ -1,257 +1,389 @@
-import os
-import glob
-import pandas as pd
-from datetime import datetime
+"""
+Counter Move Statistics Module
 
-class CounterMoveStats:
-    def __init__(self, data_directory=None):
-        """
-        Initialize counter-move statistics from historical data
-        
-        Args:
-            data_directory (str): Directory containing historical counter-move analysis files
-        """
-        if data_directory is None:
-            # Get script directory and create correct path
-            script_dir = os.path.dirname(os.path.abspath(__file__))
-            data_directory = os.path.join(script_dir, 'data', 'countermove_dataset')
-        
-        self.data_directory = data_directory
-        self.stats = self._load_historical_data(data_directory)
-        
-    def _parse_duration(self, duration_line):
-        """
-        Parse duration string from the format "Duration: 0 days 00:07:00"
-        
-        Args:
-            duration_line (str): Duration line from the file
-            
-        Returns:
-            int: Total duration in minutes
-        """
-        try:
-            # Remove "Duration: " prefix
-            duration_str = duration_line.split("Duration: ")[1]
-            
-            # Split into days and time parts
-            days_part, time_part = duration_str.split(" days ")
-            days = int(days_part)
-            
-            # Parse time HH:MM:SS
-            hours, minutes, _ = time_part.strip().split(":")
-            
-            # Calculate total minutes
-            total_minutes = (days * 24 * 60) + (int(hours) * 60) + int(minutes)
-            return total_minutes
-            
-        except Exception as e:
-            print(f"Error parsing duration string '{duration_line}': {e}")
-            return 0
+Analyzes counter-movements in price trends and calculates relevant statistics.
+"""
+
+import pandas as pd
+import numpy as np
+from pathlib import Path
+from typing import Dict, List, Tuple
+
+class CountermoveStats:
+    """Analyzes countermove patterns in stock data"""
     
-    def _load_historical_data(self, directory):
+    def analyze_countermove_patterns(self, countermove_data_path: str, 
+                                   min_duration: int = 2,
+                                   min_price_change_pct: float = 0.2) -> pd.DataFrame:
         """
-        Load and process all historical counter-move analysis files
+        Analyzes countermove patterns from processed data
         
         Args:
-            directory (str): Directory path containing analysis files
-            
-        Returns:
-            dict: Processed statistics for both trend types
+            countermove_data_path: Path to countermove CSV file
+            min_duration: Minimum number of bars for a valid pattern
+            min_price_change_pct: Minimum price change % for a valid pattern
         """
-        # Initialize statistics structure
-        all_stats = {
-            'UpTrend': {
-                'durations': [],
-                'price_changes': [],
-                'volume_changes': [],
-                'success_rate': 0,
-                'avg_duration': 0,
-                'max_duration': 0,
-                'avg_price_change': 0,
-                'max_price_change': 0,
-                'total_counter_moves': 0
-            },
-            'DownTrend': {
-                'durations': [],
-                'price_changes': [],
-                'volume_changes': [],
-                'success_rate': 0,
-                'avg_duration': 0,
-                'max_duration': 0,
-                'avg_price_change': 0,
-                'max_price_change': 0,
-                'total_counter_moves': 0
-            }
+        # Load countermove data
+        data = pd.read_csv(countermove_data_path)
+        data['Datetime'] = pd.to_datetime(data['Datetime'])
+        data.set_index('Datetime', inplace=True)
+        
+        # Get symbol and date from filename
+        file_name = Path(countermove_data_path).name
+        symbol = file_name.split('_')[1]
+        date = file_name.split('_')[3].split('.')[0]
+        
+        # Initialize results storage
+        patterns = []
+        
+        # Find all countermove sequences
+        i = 0
+        while i < len(data):
+            if data['Countermove'].iloc[i] != 'None':
+                # Found start of pattern
+                pattern_type = data['Countermove'].iloc[i]
+                start_idx = i
+                
+                # Find end of consecutive same-type countermoves
+                j = i + 1
+                while j < len(data) and data['Countermove'].iloc[j] == pattern_type:
+                    j += 1
+                
+                # Only analyze patterns meeting minimum criteria
+                if j - start_idx >= min_duration:
+                    pattern_stats = self._analyze_single_pattern(
+                        data,
+                        start_idx,
+                        j - 1,
+                        pattern_type
+                    )
+                    
+                    # Add pattern if it meets minimum price change
+                    if abs(pattern_stats['price_change_pct']) >= min_price_change_pct:
+                        patterns.append(pattern_stats)
+                
+                i = j  # Move to end of pattern
+            else:
+                i += 1
+        
+        # Create DataFrame from patterns
+        results_df = pd.DataFrame(patterns)
+        
+        # Calculate probabilities
+        prob_stats = self._calculate_probabilities(results_df)
+        
+        # Save results
+        output_dir = Path('data/countermove_dataset')
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        output_path = output_dir / f"countermove_stats_{symbol}_{date}.csv"
+        results_df.to_csv(output_path)
+        
+        # Print summary
+        print("\nCountermove Pattern Analysis")
+        print("=" * 50)
+        print(f"\nTotal patterns found: {len(results_df)}")
+        
+        if len(results_df) > 0:
+            print("\nPattern type distribution:")
+            print(results_df['pattern_type'].value_counts())
+            print("\nPattern strength distribution:")
+            print(results_df['pattern_strength'].value_counts())
+            
+            print("\nProbability Analysis:")
+            print("=" * 30)
+            
+            # Print probability stats for each strength level
+            for strength in ['Strong', 'Moderate', 'Weak']:
+                if strength in prob_stats:
+                    stats = prob_stats[strength]
+                    print(f"\n{strength} Patterns:")
+                    print(f"Total count: {stats['total']}")
+                    print(f"Resume probability: {stats['resume_prob']:.1%}")
+                    print(f"Reversal probability: {stats['reversal_prob']:.1%}")
+                    print(f"Average recovery bars: {stats['avg_recovery_bars']:.1f}")
+                    print(f"Average price change: {stats['avg_price_change_pct']:.2f}%")
+                    print(f"Average volume change: {stats['avg_volume_change_pct']:.2f}%")
+            
+            print("\nPattern Type Analysis:")
+            print("=" * 30)
+            for pattern in ['Rally', 'Pullback']:
+                type_stats = prob_stats.get(f'{pattern}_stats', {})
+                if type_stats:
+                    print(f"\n{pattern} Patterns:")
+                    print(f"Resume probability: {type_stats['resume_prob']:.1%}")
+                    print(f"Average duration: {type_stats['avg_duration']:.1f} bars")
+                    print(f"Average price change: {type_stats['avg_price_change_pct']:.2f}%")
+        
+        print(f"\nResults saved to: {output_path}")
+        
+        return results_df
+    
+    def _analyze_single_pattern(self, data: pd.DataFrame, 
+                              start_idx: int, end_idx: int, 
+                              pattern_type: str) -> Dict:
+        """Analyzes a single countermove pattern"""
+        pattern_data = data.iloc[start_idx:end_idx+1]
+        
+        # Calculate price stats
+        start_price = pattern_data['Close'].iloc[0]
+        end_price = pattern_data['Close'].iloc[-1]
+        price_change = end_price - start_price
+        price_change_pct = (price_change / start_price) * 100
+        
+        # Calculate pattern characteristics
+        duration = len(pattern_data)
+        max_price = pattern_data['High'].max()
+        min_price = pattern_data['Low'].min()
+        price_range = max_price - min_price
+        price_range_pct = (price_range / start_price) * 100
+        
+        # Calculate risk metrics
+        if pattern_type == 'Pullback':
+            # For pullbacks in uptrend
+            risk = end_price - min_price  # Risk to lowest point
+            potential_reward = max_price - end_price  # Reward to highest point
+        else:
+            # For rallies in downtrend
+            risk = max_price - end_price  # Risk to highest point
+            potential_reward = end_price - min_price  # Reward to lowest point
+        
+        risk_pct = (risk / end_price) * 100
+        reward_pct = (potential_reward / end_price) * 100
+        risk_reward_ratio = reward_pct / risk_pct if risk_pct > 0 else 0
+        
+        # Calculate stop loss and target levels
+        stop_loss = min_price if pattern_type == 'Pullback' else max_price
+        target_1r = end_price + (risk if pattern_type == 'Pullback' else -risk)  # 1:1 R/R
+        target_2r = end_price + (2 * risk if pattern_type == 'Pullback' else -2 * risk)  # 2:1 R/R
+        
+        # Volume analysis
+        avg_volume = pattern_data['Volume'].mean()
+        volume_change_pct = ((pattern_data['Volume'].iloc[-1] / pattern_data['Volume'].iloc[0]) - 1) * 100
+        
+        # Classify pattern strength
+        strength = self._classify_pattern_strength(
+            duration, price_change_pct, price_range_pct, volume_change_pct
+        )
+        
+        # Look ahead for outcome and targets
+        look_ahead = min(10, len(data) - end_idx)
+        future_data = data.iloc[end_idx:end_idx+look_ahead]
+        trend_resumed = self._check_trend_resumption(future_data, pattern_type)
+        
+        # Check if stop loss or targets were hit
+        target_results = self._check_targets(future_data, pattern_type, end_price, 
+                                           stop_loss, target_1r, target_2r)
+        
+        # Calculate recovery metrics if trend resumed
+        recovery_bars = None
+        recovery_price = None
+        if trend_resumed:
+            recovery_info = self._calculate_recovery(future_data, pattern_type, end_price)
+            recovery_bars = recovery_info['bars']
+            recovery_price = recovery_info['price']
+        
+        return {
+            'start_time': pattern_data.index[0],
+            'end_time': pattern_data.index[-1],
+            'pattern_type': pattern_type,
+            'duration_bars': duration,
+            'price_change': price_change,
+            'price_change_pct': price_change_pct,
+            'price_range': price_range,
+            'price_range_pct': price_range_pct,
+            'start_price': start_price,
+            'end_price': end_price,
+            'risk_amount': risk,
+            'risk_pct': risk_pct,
+            'potential_reward': potential_reward,
+            'reward_pct': reward_pct,
+            'risk_reward_ratio': risk_reward_ratio,
+            'stop_loss': stop_loss,
+            'target_1r': target_1r,
+            'target_2r': target_2r,
+            'stop_hit': target_results['stop_hit'],
+            'target_1r_hit': target_results['target_1r_hit'],
+            'target_2r_hit': target_results['target_2r_hit'],
+            'bars_to_target': target_results['bars_to_target'],
+            'avg_volume': avg_volume,
+            'volume_change_pct': volume_change_pct,
+            'pattern_strength': strength,
+            'outcome': 'resumed' if trend_resumed else 'reversed',
+            'recovery_bars': recovery_bars,
+            'recovery_price': recovery_price
         }
-        
-        try:
-            # Find all analysis files
-            pattern = os.path.join(directory, "*.txt")
-            files = glob.glob(pattern)
-            
-            if not files:
-                print(f"Warning: No historical data files found in {directory}")
-                return all_stats
-            
-            print(f"Found {len(files)} historical data files in {directory}")
-            
-            # Process each file
-            for file in files:
-                print(f"Processing file: {os.path.basename(file)}")
-                with open(file, 'r') as f:
-                    lines = f.readlines()
-                    current_trend = None
-                    i = 0
-                    
-                    while i < len(lines):
-                        line = lines[i].strip()
-                        
-                        if not line:
-                            i += 1
-                            continue
-                        
-                        # Identify trend and get duration
-                        if "Direction:" in line:
-                            current_trend = line.split(":")[1].strip()
-                            
-                            # Find Duration line
-                            duration_line = None
-                            j = i + 1
-                            while j < len(lines) and "Duration:" not in lines[j]:
-                                j += 1
-                            if j < len(lines):
-                                duration_line = lines[j].strip()
-                                
-                            if duration_line:
-                                duration_minutes = self._parse_duration(duration_line)
-                                if duration_minutes > 0:
-                                    all_stats[current_trend]['durations'].append(duration_minutes)
-                            
-                            i = j + 1
-                            continue
-                        
-                        # Process counter-moves (keep existing counter-move processing)
-                        if "Counter-move #" in line:
-                            if current_trend not in ['UpTrend', 'DownTrend']:
-                                i += 1
-                                continue
-                            
-                            # Read counter-move details
-                            counter_move = {}
-                            for j in range(1, 11):  # Read next 10 lines
-                                if i + j >= len(lines):
-                                    break
-                                
-                                detail_line = lines[i + j].strip()
-                                
-                                if "Counter-move size:" in detail_line:
-                                    size = float(detail_line.split("$")[1].strip())
-                                    counter_move['size'] = size
-                                    all_stats[current_trend]['price_changes'].append(size)
-                                elif "Percentage of trend:" in detail_line:
-                                    percentage = float(detail_line.split(":")[1].strip().replace('%', ''))
-                                    counter_move['percentage'] = percentage
-                            
-                            all_stats[current_trend]['total_counter_moves'] += 1
-                            i += 11  # Skip processed lines
-                        else:
-                            i += 1
-            
-            # Calculate statistics
-            for trend_type in ['UpTrend', 'DownTrend']:
-                stats = all_stats[trend_type]
-                if stats['price_changes']:  # Check if we have data
-                    # Duration calculations
-                    if stats['durations']:
-                        stats['avg_duration'] = sum(stats['durations']) / len(stats['durations'])
-                        stats['max_duration'] = max(stats['durations'])
-                    else:
-                        stats['avg_duration'] = 0
-                        stats['max_duration'] = 0
-                    
-                    # Keep existing price change calculations
-                    stats['avg_price_change'] = sum(stats['price_changes']) / len(stats['price_changes'])
-                    stats['max_price_change'] = max(stats['price_changes'])
-                    
-                    # Success rate calculation
-                    successful_moves = len([p for p in stats['price_changes'] if p > 0])
-                    stats['success_rate'] = successful_moves / len(stats['price_changes'])
-                    
-                    # Calculate percentiles
-                    if len(stats['price_changes']) >= 4:
-                        stats['price_change_percentiles'] = {
-                            '25': self._calculate_percentile(stats['price_changes'], 25),
-                            '50': self._calculate_percentile(stats['price_changes'], 50),
-                            '75': self._calculate_percentile(stats['price_changes'], 75)
-                        }
-                        if stats['durations']:
-                            stats['duration_percentiles'] = {
-                                '25': self._calculate_percentile(stats['durations'], 25),
-                                '50': self._calculate_percentile(stats['durations'], 50),
-                                '75': self._calculate_percentile(stats['durations'], 75)
-                            }
-                else:
-                    print(f"Warning: No data found for {trend_type}")
-        
-        except Exception as e:
-            print(f"Error processing historical data: {e}")
-            import traceback
-            traceback.print_exc()
-            return all_stats
-        
-        return all_stats
     
-    def _calculate_percentile(self, data, percentile):
-        """
-        Calculate percentile value from a list of numbers
-        """
-        if not data:
-            return 0
-        sorted_data = sorted(data)
-        index = (len(sorted_data) - 1) * percentile / 100
-        return sorted_data[int(index)]
-    
-    def get_trend_stats(self, trend_type):
-        """
-        Get statistics for a specific trend type
+    def _calculate_recovery(self, future_data: pd.DataFrame, 
+                           pattern_type: str, 
+                           end_price: float) -> Dict:
+        """Calculate how long it took for trend to recover"""
+        for i in range(len(future_data)):
+            if pattern_type == 'Pullback':
+                # In uptrend, look for new high
+                if future_data['High'].iloc[i] > end_price:
+                    return {
+                        'bars': i + 1,
+                        'price': future_data['High'].iloc[i]
+                    }
+            else:
+                # In downtrend, look for new low
+                if future_data['Low'].iloc[i] < end_price:
+                    return {
+                        'bars': i + 1,
+                        'price': future_data['Low'].iloc[i]
+                    }
         
-        Args:
-            trend_type (str): 'UpTrend' or 'DownTrend'
-            
-        Returns:
-            dict: Statistics for the specified trend type
-        """
-        return self.stats.get(trend_type, {})
+        return {
+            'bars': None,
+            'price': None
+        }
     
-    def print_summary(self):
+    def _check_trend_resumption(self, future_data: pd.DataFrame, 
+                              pattern_type: str) -> bool:
+        """Checks if the original trend resumed after countermove"""
+        if pattern_type == 'Pullback':
+            # In uptrend, check if price made new high
+            return future_data['High'].max() > future_data['High'].iloc[0]
+        else:
+            # In downtrend, check if price made new low
+            return future_data['Low'].min() < future_data['Low'].iloc[0]
+    
+    def _classify_pattern_strength(self, duration: int, 
+                                 price_change_pct: float,
+                                 price_range_pct: float,
+                                 volume_change_pct: float) -> str:
         """
-        Print a summary of all counter-move statistics
+        Classify pattern strength based on key metrics
         """
-        print("\nCounter-Move Statistics Summary")
-        print("=" * 40)
+        # Score different aspects
+        duration_score = 0
+        if duration >= 4:
+            duration_score = 3
+        elif duration >= 3:
+            duration_score = 2
+        else:
+            duration_score = 1
         
-        for trend_type in ['UpTrend', 'DownTrend']:
-            stats = self.stats[trend_type]
-            print(f"\n{trend_type}:")
-            print("-" * 20)
-            print(f"Total Counter-Moves: {stats['total_counter_moves']}")
-            print(f"Average Duration: {stats['avg_duration']:.2f} minutes")
-            print(f"Max Duration: {stats['max_duration']:.2f} minutes")
-            print(f"Average Price Change: ${stats['avg_price_change']:.2f}")
-            print(f"Max Price Change: ${stats['max_price_change']:.2f}")
-            print(f"Success Rate: {stats['success_rate']*100:.1f}%")
+        price_score = 0
+        if abs(price_change_pct) >= 0.75:
+            price_score = 3
+        elif abs(price_change_pct) >= 0.5:
+            price_score = 2
+        else:
+            price_score = 1
+        
+        range_score = 0
+        if price_range_pct >= 1.0:
+            range_score = 3
+        elif price_range_pct >= 0.75:
+            range_score = 2
+        else:
+            range_score = 1
+        
+        volume_score = 0
+        if abs(volume_change_pct) >= 100:  # Volume doubled
+            volume_score = 3
+        elif abs(volume_change_pct) >= 50:
+            volume_score = 2
+        else:
+            volume_score = 1
+        
+        # Calculate total score
+        total_score = duration_score + price_score + range_score + volume_score
+        
+        # Classify based on total score
+        if total_score >= 10:
+            return 'Strong'
+        elif total_score >= 7:
+            return 'Moderate'
+        else:
+            return 'Weak'
+    
+    def _calculate_probabilities(self, df: pd.DataFrame) -> Dict:
+        """Calculate probability statistics for different pattern strengths"""
+        stats = {}
+        
+        # Calculate stats for each strength level
+        for strength in df['pattern_strength'].unique():
+            strength_df = df[df['pattern_strength'] == strength]
             
-            if 'duration_percentiles' in stats:
-                print("\nDuration Percentiles:")
-                for p, v in stats['duration_percentiles'].items():
-                    print(f"{p}th: {v:.2f} minutes")
-            
-            if 'price_change_percentiles' in stats:
-                print("\nPrice Change Percentiles:")
-                for p, v in stats['price_change_percentiles'].items():
-                    print(f"{p}th: ${v:.2f}")
+            resumed = strength_df['outcome'] == 'resumed'
+            stats[strength] = {
+                'total': len(strength_df),
+                'resume_prob': resumed.mean(),
+                'reversal_prob': (~resumed).mean(),
+                'avg_recovery_bars': strength_df[resumed]['recovery_bars'].mean(),
+                'avg_price_change_pct': strength_df['price_change_pct'].mean(),
+                'avg_volume_change_pct': strength_df['volume_change_pct'].mean()
+            }
+        
+        # Calculate stats by pattern type
+        for pattern in ['Rally', 'Pullback']:
+            pattern_df = df[df['pattern_type'] == pattern]
+            if len(pattern_df) > 0:
+                resumed = pattern_df['outcome'] == 'resumed'
+                stats[f'{pattern}_stats'] = {
+                    'resume_prob': resumed.mean(),
+                    'avg_duration': pattern_df['duration_bars'].mean(),
+                    'avg_price_change_pct': pattern_df['price_change_pct'].mean(),
+                    'success_by_strength': {
+                        strength: group['outcome'].value_counts(normalize=True).get('resumed', 0)
+                        for strength, group in pattern_df.groupby('pattern_strength')
+                    }
+                }
+        
+        return stats
+    
+    def _check_targets(self, future_data: pd.DataFrame, pattern_type: str,
+                      entry_price: float, stop_loss: float, 
+                      target_1r: float, target_2r: float) -> Dict:
+        """Check if stop loss or profit targets were hit"""
+        stop_hit = False
+        target_1r_hit = False
+        target_2r_hit = False
+        bars_to_target = None
+        
+        for i in range(len(future_data)):
+            if pattern_type == 'Pullback':
+                # Check stop loss
+                if future_data['Low'].iloc[i] <= stop_loss:
+                    stop_hit = True
+                    bars_to_target = i + 1
+                    break
+                # Check targets
+                if future_data['High'].iloc[i] >= target_1r:
+                    target_1r_hit = True
+                    if bars_to_target is None:
+                        bars_to_target = i + 1
+                if future_data['High'].iloc[i] >= target_2r:
+                    target_2r_hit = True
+                    if bars_to_target is None:
+                        bars_to_target = i + 1
+            else:  # Rally
+                # Check stop loss
+                if future_data['High'].iloc[i] >= stop_loss:
+                    stop_hit = True
+                    bars_to_target = i + 1
+                    break
+                # Check targets
+                if future_data['Low'].iloc[i] <= target_1r:
+                    target_1r_hit = True
+                    if bars_to_target is None:
+                        bars_to_target = i + 1
+                if future_data['Low'].iloc[i] <= target_2r:
+                    target_2r_hit = True
+                    if bars_to_target is None:
+                        bars_to_target = i + 1
+        
+        return {
+            'stop_hit': stop_hit,
+            'target_1r_hit': target_1r_hit,
+            'target_2r_hit': target_2r_hit,
+            'bars_to_target': bars_to_target
+        }
 
 if __name__ == "__main__":
-    # Example usage
-    stats = CounterMoveStats()
-    stats.print_summary() 
+    analyzer = CountermoveStats()
+    countermove_file = "data/countermove_complete/countermove_NNE_trend_data_20241205.csv"
+    results = analyzer.analyze_countermove_patterns(countermove_file)

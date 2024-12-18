@@ -1,0 +1,2610 @@
+DETAILED COUNTER-MOVE ANALYSIS
+Date: 20241209
+==================================================
+
+MAJOR TREND
+========================================
+Direction: UpTrend
+
+COUNTER-MOVES WITHIN THIS TREND:
+--------------------------------------------------
+Counter-move
+Time: 2024-12-09 12:36:00-05:00
+Counter-move size: $0.06
+Percentage of trend: 0.3%
+Price range: $0.03
+Open: $25.13
+High: $25.13
+Low: $25.10
+Close: $25.10
+Previous candle close: $25.16
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:37:00-05:00
+Counter-move size: $0.07
+Percentage of trend: 0.3%
+Price range: $0.10
+Open: $25.10
+High: $25.13
+Low: $25.03
+Close: $25.09
+Previous candle close: $25.10
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:38:00-05:00
+Counter-move size: $0.06
+Percentage of trend: 0.2%
+Price range: $0.07
+Open: $25.03
+High: $25.10
+Low: $25.03
+Close: $25.10
+Previous candle close: $25.09
+Previous candle range: $0.10
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:39:00-05:00
+Counter-move size: $0.10
+Percentage of trend: 0.4%
+Price range: $0.02
+Open: $25.04
+High: $25.07
+Low: $25.04
+Close: $25.07
+Previous candle close: $25.10
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:40:00-05:00
+Counter-move size: $0.12
+Percentage of trend: 0.5%
+Price range: $0.00
+Open: $25.04
+High: $25.04
+Low: $25.04
+Close: $25.04
+Previous candle close: $25.07
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:41:00-05:00
+Counter-move size: $0.16
+Percentage of trend: 0.6%
+Price range: $0.03
+Open: $25.03
+High: $25.03
+Low: $25.00
+Close: $25.00
+Previous candle close: $25.04
+Previous candle range: $0.00
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:42:00-05:00
+Counter-move size: $0.14
+Percentage of trend: 0.6%
+Price range: $0.08
+Open: $25.01
+High: $25.09
+Low: $25.00
+Close: $25.02
+Previous candle close: $25.00
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:43:00-05:00
+Counter-move size: $0.26
+Percentage of trend: 1.0%
+Price range: $0.11
+Open: $25.01
+High: $25.01
+Low: $24.90
+Close: $24.90
+Previous candle close: $25.02
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:44:00-05:00
+Counter-move size: $0.24
+Percentage of trend: 1.0%
+Price range: $0.03
+Open: $24.91
+High: $24.94
+Low: $24.91
+Close: $24.92
+Previous candle close: $24.90
+Previous candle range: $0.11
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:45:00-05:00
+Counter-move size: $0.29
+Percentage of trend: 1.1%
+Price range: $0.08
+Open: $24.90
+High: $24.95
+Low: $24.88
+Close: $24.88
+Previous candle close: $24.92
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:46:00-05:00
+Counter-move size: $0.26
+Percentage of trend: 1.0%
+Price range: $0.05
+Open: $24.95
+High: $24.95
+Low: $24.90
+Close: $24.90
+Previous candle close: $24.88
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:47:00-05:00
+Counter-move size: $0.16
+Percentage of trend: 0.6%
+Price range: $0.01
+Open: $24.99
+High: $25.00
+Low: $24.99
+Close: $25.00
+Previous candle close: $24.90
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:48:00-05:00
+Counter-move size: $0.20
+Percentage of trend: 0.8%
+Price range: $0.02
+Open: $24.97
+High: $24.98
+Low: $24.96
+Close: $24.96
+Previous candle close: $25.00
+Previous candle range: $0.01
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:49:00-05:00
+Counter-move size: $0.24
+Percentage of trend: 0.9%
+Price range: $0.06
+Open: $24.92
+High: $24.92
+Low: $24.86
+Close: $24.92
+Previous candle close: $24.96
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:50:00-05:00
+Counter-move size: $0.20
+Percentage of trend: 0.8%
+Price range: $0.06
+Open: $24.95
+High: $24.99
+Low: $24.93
+Close: $24.96
+Previous candle close: $24.92
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:51:00-05:00
+Counter-move size: $0.19
+Percentage of trend: 0.8%
+Price range: $0.06
+Open: $25.03
+High: $25.03
+Low: $24.97
+Close: $24.97
+Previous candle close: $24.96
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:52:00-05:00
+Counter-move size: $0.14
+Percentage of trend: 0.6%
+Price range: $0.04
+Open: $25.04
+High: $25.06
+Low: $25.02
+Close: $25.02
+Previous candle close: $24.97
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:53:00-05:00
+Counter-move size: $0.13
+Percentage of trend: 0.5%
+Price range: $0.07
+Open: $25.02
+High: $25.06
+Low: $24.98
+Close: $25.04
+Previous candle close: $25.02
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:54:00-05:00
+Counter-move size: $0.12
+Percentage of trend: 0.5%
+Price range: $0.02
+Open: $25.06
+High: $25.06
+Low: $25.04
+Close: $25.04
+Previous candle close: $25.04
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:55:00-05:00
+Counter-move size: $0.13
+Percentage of trend: 0.5%
+Price range: $0.01
+Open: $25.05
+High: $25.05
+Low: $25.03
+Close: $25.03
+Previous candle close: $25.04
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:56:00-05:00
+Counter-move size: $0.21
+Percentage of trend: 0.8%
+Price range: $0.16
+Open: $25.05
+High: $25.05
+Low: $24.89
+Close: $24.95
+Previous candle close: $25.03
+Previous candle range: $0.01
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:57:00-05:00
+Counter-move size: $0.20
+Percentage of trend: 0.8%
+Price range: $0.03
+Open: $24.97
+High: $24.97
+Low: $24.93
+Close: $24.96
+Previous candle close: $24.95
+Previous candle range: $0.16
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:58:00-05:00
+Counter-move size: $0.35
+Percentage of trend: 1.4%
+Price range: $0.19
+Open: $24.94
+High: $24.94
+Low: $24.75
+Close: $24.81
+Previous candle close: $24.96
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 12:59:00-05:00
+Counter-move size: $0.36
+Percentage of trend: 1.4%
+Price range: $0.03
+Open: $24.77
+High: $24.80
+Low: $24.77
+Close: $24.80
+Previous candle close: $24.81
+Previous candle range: $0.19
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:00:00-05:00
+Counter-move size: $0.25
+Percentage of trend: 1.0%
+Price range: $0.09
+Open: $24.82
+High: $24.91
+Low: $24.82
+Close: $24.91
+Previous candle close: $24.80
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:01:00-05:00
+Counter-move size: $0.24
+Percentage of trend: 1.0%
+Price range: $0.11
+Open: $24.84
+High: $24.92
+Low: $24.81
+Close: $24.92
+Previous candle close: $24.91
+Previous candle range: $0.09
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:02:00-05:00
+Counter-move size: $0.25
+Percentage of trend: 1.0%
+Price range: $0.06
+Open: $24.85
+High: $24.92
+Low: $24.85
+Close: $24.92
+Previous candle close: $24.92
+Previous candle range: $0.11
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:03:00-05:00
+Counter-move size: $0.36
+Percentage of trend: 1.4%
+Price range: $0.06
+Open: $24.86
+High: $24.86
+Low: $24.80
+Close: $24.80
+Previous candle close: $24.92
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:04:00-05:00
+Counter-move size: $0.35
+Percentage of trend: 1.4%
+Price range: $0.06
+Open: $24.78
+High: $24.83
+Low: $24.77
+Close: $24.81
+Previous candle close: $24.80
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:05:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.6%
+Price range: $0.06
+Open: $24.82
+High: $24.82
+Low: $24.76
+Close: $24.77
+Previous candle close: $24.81
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:06:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.6%
+Price range: $0.07
+Open: $24.77
+High: $24.84
+Low: $24.77
+Close: $24.77
+Previous candle close: $24.77
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:07:00-05:00
+Counter-move size: $0.40
+Percentage of trend: 1.6%
+Price range: $0.05
+Open: $24.76
+High: $24.80
+Low: $24.75
+Close: $24.76
+Previous candle close: $24.77
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:08:00-05:00
+Counter-move size: $0.40
+Percentage of trend: 1.6%
+Price range: $0.07
+Open: $24.73
+High: $24.79
+Low: $24.72
+Close: $24.76
+Previous candle close: $24.76
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:09:00-05:00
+Counter-move size: $0.31
+Percentage of trend: 1.2%
+Price range: $0.04
+Open: $24.83
+High: $24.85
+Low: $24.81
+Close: $24.85
+Previous candle close: $24.76
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:10:00-05:00
+Counter-move size: $0.46
+Percentage of trend: 1.8%
+Price range: $0.12
+Open: $24.82
+High: $24.82
+Low: $24.70
+Close: $24.70
+Previous candle close: $24.85
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:11:00-05:00
+Counter-move size: $0.38
+Percentage of trend: 1.5%
+Price range: $0.08
+Open: $24.72
+High: $24.78
+Low: $24.70
+Close: $24.78
+Previous candle close: $24.70
+Previous candle range: $0.12
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:12:00-05:00
+Counter-move size: $0.36
+Percentage of trend: 1.4%
+Price range: $0.07
+Open: $24.80
+High: $24.84
+Low: $24.77
+Close: $24.80
+Previous candle close: $24.78
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:13:00-05:00
+Counter-move size: $0.36
+Percentage of trend: 1.4%
+Price range: $0.01
+Open: $24.79
+High: $24.81
+Low: $24.79
+Close: $24.81
+Previous candle close: $24.80
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:14:00-05:00
+Counter-move size: $0.36
+Percentage of trend: 1.4%
+Price range: $0.03
+Open: $24.81
+High: $24.84
+Low: $24.81
+Close: $24.81
+Previous candle close: $24.81
+Previous candle range: $0.01
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:15:00-05:00
+Counter-move size: $0.41
+Percentage of trend: 1.6%
+Price range: $0.02
+Open: $24.77
+High: $24.77
+Low: $24.75
+Close: $24.75
+Previous candle close: $24.81
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:16:00-05:00
+Counter-move size: $0.30
+Percentage of trend: 1.2%
+Price range: $0.08
+Open: $24.78
+High: $24.86
+Low: $24.78
+Close: $24.86
+Previous candle close: $24.75
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:17:00-05:00
+Counter-move size: $0.26
+Percentage of trend: 1.0%
+Price range: $0.06
+Open: $24.86
+High: $24.92
+Low: $24.86
+Close: $24.90
+Previous candle close: $24.86
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:18:00-05:00
+Counter-move size: $0.25
+Percentage of trend: 1.0%
+Price range: $0.00
+Open: $24.91
+High: $24.91
+Low: $24.91
+Close: $24.91
+Previous candle close: $24.90
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:19:00-05:00
+Counter-move size: $0.25
+Percentage of trend: 1.0%
+Price range: $0.02
+Open: $24.91
+High: $24.92
+Low: $24.90
+Close: $24.91
+Previous candle close: $24.91
+Previous candle range: $0.00
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:20:00-05:00
+Counter-move size: $0.24
+Percentage of trend: 1.0%
+Price range: $0.04
+Open: $24.89
+High: $24.94
+Low: $24.89
+Close: $24.92
+Previous candle close: $24.91
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:21:00-05:00
+Counter-move size: $0.20
+Percentage of trend: 0.8%
+Price range: $0.04
+Open: $24.95
+High: $24.96
+Low: $24.92
+Close: $24.96
+Previous candle close: $24.92
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:22:00-05:00
+Counter-move size: $0.23
+Percentage of trend: 0.9%
+Price range: $0.05
+Open: $24.97
+High: $24.97
+Low: $24.92
+Close: $24.93
+Previous candle close: $24.96
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:23:00-05:00
+Counter-move size: $0.21
+Percentage of trend: 0.8%
+Price range: $0.06
+Open: $24.96
+High: $24.98
+Low: $24.92
+Close: $24.95
+Previous candle close: $24.93
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:24:00-05:00
+Counter-move size: $0.23
+Percentage of trend: 0.9%
+Price range: $0.04
+Open: $24.96
+High: $24.96
+Low: $24.92
+Close: $24.93
+Previous candle close: $24.95
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:25:00-05:00
+Counter-move size: $0.13
+Percentage of trend: 0.5%
+Price range: $0.10
+Open: $24.93
+High: $25.03
+Low: $24.93
+Close: $25.03
+Previous candle close: $24.93
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:26:00-05:00
+Counter-move size: $0.15
+Percentage of trend: 0.6%
+Price range: $0.02
+Open: $25.01
+High: $25.03
+Low: $25.01
+Close: $25.01
+Previous candle close: $25.03
+Previous candle range: $0.10
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:27:00-05:00
+Counter-move size: $0.19
+Percentage of trend: 0.8%
+Price range: $0.06
+Open: $24.99
+High: $25.02
+Low: $24.96
+Close: $24.97
+Previous candle close: $25.01
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:28:00-05:00
+Counter-move size: $0.21
+Percentage of trend: 0.8%
+Price range: $0.03
+Open: $24.99
+High: $24.99
+Low: $24.95
+Close: $24.95
+Previous candle close: $24.97
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:29:00-05:00
+Counter-move size: $0.21
+Percentage of trend: 0.8%
+Price range: $0.04
+Open: $24.95
+High: $24.99
+Low: $24.95
+Close: $24.95
+Previous candle close: $24.95
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:30:00-05:00
+Counter-move size: $0.32
+Percentage of trend: 1.3%
+Price range: $0.08
+Open: $24.92
+High: $24.92
+Low: $24.84
+Close: $24.84
+Previous candle close: $24.95
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:31:00-05:00
+Counter-move size: $0.34
+Percentage of trend: 1.3%
+Price range: $0.04
+Open: $24.86
+High: $24.86
+Low: $24.83
+Close: $24.83
+Previous candle close: $24.84
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:32:00-05:00
+Counter-move size: $0.37
+Percentage of trend: 1.5%
+Price range: $0.06
+Open: $24.84
+High: $24.84
+Low: $24.77
+Close: $24.79
+Previous candle close: $24.83
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:33:00-05:00
+Counter-move size: $0.25
+Percentage of trend: 1.0%
+Price range: $0.12
+Open: $24.79
+High: $24.91
+Low: $24.79
+Close: $24.91
+Previous candle close: $24.79
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:34:00-05:00
+Counter-move size: $0.31
+Percentage of trend: 1.2%
+Price range: $0.02
+Open: $24.88
+High: $24.88
+Low: $24.85
+Close: $24.85
+Previous candle close: $24.91
+Previous candle range: $0.12
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:35:00-05:00
+Counter-move size: $0.30
+Percentage of trend: 1.2%
+Price range: $0.00
+Open: $24.86
+High: $24.86
+Low: $24.86
+Close: $24.86
+Previous candle close: $24.85
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:36:00-05:00
+Counter-move size: $0.38
+Percentage of trend: 1.5%
+Price range: $0.10
+Open: $24.85
+High: $24.85
+Low: $24.75
+Close: $24.78
+Previous candle close: $24.86
+Previous candle range: $0.00
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:37:00-05:00
+Counter-move size: $0.43
+Percentage of trend: 1.7%
+Price range: $0.02
+Open: $24.75
+High: $24.75
+Low: $24.73
+Close: $24.73
+Previous candle close: $24.78
+Previous candle range: $0.10
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:38:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.6%
+Price range: $0.02
+Open: $24.78
+High: $24.78
+Low: $24.76
+Close: $24.77
+Previous candle close: $24.73
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:39:00-05:00
+Counter-move size: $0.36
+Percentage of trend: 1.4%
+Price range: $0.07
+Open: $24.77
+High: $24.82
+Low: $24.75
+Close: $24.80
+Previous candle close: $24.77
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:40:00-05:00
+Counter-move size: $0.36
+Percentage of trend: 1.4%
+Price range: $0.06
+Open: $24.78
+High: $24.84
+Low: $24.78
+Close: $24.80
+Previous candle close: $24.80
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:41:00-05:00
+Counter-move size: $0.41
+Percentage of trend: 1.6%
+Price range: $0.07
+Open: $24.82
+High: $24.82
+Low: $24.75
+Close: $24.75
+Previous candle close: $24.80
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:42:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.6%
+Price range: $0.03
+Open: $24.78
+High: $24.78
+Low: $24.75
+Close: $24.77
+Previous candle close: $24.75
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:43:00-05:00
+Counter-move size: $0.40
+Percentage of trend: 1.6%
+Price range: $0.01
+Open: $24.78
+High: $24.78
+Low: $24.76
+Close: $24.76
+Previous candle close: $24.77
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:44:00-05:00
+Counter-move size: $0.35
+Percentage of trend: 1.4%
+Price range: $0.04
+Open: $24.78
+High: $24.81
+Low: $24.77
+Close: $24.81
+Previous candle close: $24.76
+Previous candle range: $0.01
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:45:00-05:00
+Counter-move size: $0.30
+Percentage of trend: 1.2%
+Price range: $0.06
+Open: $24.82
+High: $24.86
+Low: $24.80
+Close: $24.86
+Previous candle close: $24.81
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:46:00-05:00
+Counter-move size: $0.32
+Percentage of trend: 1.3%
+Price range: $0.03
+Open: $24.85
+High: $24.85
+Low: $24.82
+Close: $24.84
+Previous candle close: $24.86
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:47:00-05:00
+Counter-move size: $0.44
+Percentage of trend: 1.7%
+Price range: $0.03
+Open: $24.76
+High: $24.76
+Low: $24.73
+Close: $24.73
+Previous candle close: $24.84
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:48:00-05:00
+Counter-move size: $0.35
+Percentage of trend: 1.4%
+Price range: $0.08
+Open: $24.73
+High: $24.81
+Low: $24.73
+Close: $24.81
+Previous candle close: $24.73
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:49:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.5%
+Price range: $0.07
+Open: $24.85
+High: $24.85
+Low: $24.77
+Close: $24.77
+Previous candle close: $24.81
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:50:00-05:00
+Counter-move size: $0.32
+Percentage of trend: 1.3%
+Price range: $0.04
+Open: $24.80
+High: $24.84
+Low: $24.80
+Close: $24.84
+Previous candle close: $24.77
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:51:00-05:00
+Counter-move size: $0.40
+Percentage of trend: 1.6%
+Price range: $0.04
+Open: $24.78
+High: $24.80
+Low: $24.76
+Close: $24.76
+Previous candle close: $24.84
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:52:00-05:00
+Counter-move size: $0.36
+Percentage of trend: 1.4%
+Price range: $0.01
+Open: $24.81
+High: $24.81
+Low: $24.80
+Close: $24.80
+Previous candle close: $24.76
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:53:00-05:00
+Counter-move size: $0.35
+Percentage of trend: 1.4%
+Price range: $0.05
+Open: $24.83
+High: $24.83
+Low: $24.78
+Close: $24.82
+Previous candle close: $24.80
+Previous candle range: $0.01
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:55:00-05:00
+Counter-move size: $0.38
+Percentage of trend: 1.5%
+Price range: $0.08
+Open: $24.82
+High: $24.82
+Low: $24.74
+Close: $24.79
+Previous candle close: $24.82
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:56:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.6%
+Price range: $0.03
+Open: $24.78
+High: $24.80
+Low: $24.77
+Close: $24.77
+Previous candle close: $24.79
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:57:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.6%
+Price range: $0.05
+Open: $24.73
+High: $24.77
+Low: $24.72
+Close: $24.77
+Previous candle close: $24.77
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:58:00-05:00
+Counter-move size: $0.38
+Percentage of trend: 1.5%
+Price range: $0.05
+Open: $24.74
+High: $24.79
+Low: $24.74
+Close: $24.78
+Previous candle close: $24.77
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 13:59:00-05:00
+Counter-move size: $0.40
+Percentage of trend: 1.6%
+Price range: $0.00
+Open: $24.76
+High: $24.76
+Low: $24.76
+Close: $24.76
+Previous candle close: $24.78
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:00:00-05:00
+Counter-move size: $0.28
+Percentage of trend: 1.1%
+Price range: $0.13
+Open: $24.78
+High: $24.88
+Low: $24.75
+Close: $24.88
+Previous candle close: $24.76
+Previous candle range: $0.00
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:01:00-05:00
+Counter-move size: $0.33
+Percentage of trend: 1.3%
+Price range: $0.00
+Open: $24.83
+High: $24.83
+Low: $24.83
+Close: $24.83
+Previous candle close: $24.88
+Previous candle range: $0.13
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:02:00-05:00
+Counter-move size: $0.36
+Percentage of trend: 1.4%
+Price range: $0.01
+Open: $24.81
+High: $24.81
+Low: $24.80
+Close: $24.80
+Previous candle close: $24.83
+Previous candle range: $0.00
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:03:00-05:00
+Counter-move size: $0.37
+Percentage of trend: 1.5%
+Price range: $0.02
+Open: $24.81
+High: $24.81
+Low: $24.79
+Close: $24.79
+Previous candle close: $24.80
+Previous candle range: $0.01
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:04:00-05:00
+Counter-move size: $0.35
+Percentage of trend: 1.4%
+Price range: $0.03
+Open: $24.84
+High: $24.84
+Low: $24.81
+Close: $24.81
+Previous candle close: $24.79
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:05:00-05:00
+Counter-move size: $0.29
+Percentage of trend: 1.2%
+Price range: $0.14
+Open: $24.78
+High: $24.92
+Low: $24.78
+Close: $24.87
+Previous candle close: $24.81
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:06:00-05:00
+Counter-move size: $0.25
+Percentage of trend: 1.0%
+Price range: $0.05
+Open: $24.87
+High: $24.91
+Low: $24.86
+Close: $24.91
+Previous candle close: $24.87
+Previous candle range: $0.14
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:07:00-05:00
+Counter-move size: $0.28
+Percentage of trend: 1.1%
+Price range: $0.06
+Open: $24.89
+High: $24.92
+Low: $24.86
+Close: $24.88
+Previous candle close: $24.91
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:08:00-05:00
+Counter-move size: $0.28
+Percentage of trend: 1.1%
+Price range: $0.06
+Open: $24.86
+High: $24.92
+Low: $24.86
+Close: $24.88
+Previous candle close: $24.88
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:09:00-05:00
+Counter-move size: $0.22
+Percentage of trend: 0.9%
+Price range: $0.04
+Open: $24.93
+High: $24.97
+Low: $24.93
+Close: $24.94
+Previous candle close: $24.88
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:10:00-05:00
+Counter-move size: $0.11
+Percentage of trend: 0.4%
+Price range: $0.08
+Open: $25.00
+High: $25.07
+Low: $24.99
+Close: $25.05
+Previous candle close: $24.94
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:11:00-05:00
+Counter-move size: $0.23
+Percentage of trend: 0.9%
+Price range: $0.10
+Open: $25.03
+High: $25.03
+Low: $24.93
+Close: $24.93
+Previous candle close: $25.05
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:12:00-05:00
+Counter-move size: $0.14
+Percentage of trend: 0.6%
+Price range: $0.02
+Open: $25.00
+High: $25.02
+Low: $25.00
+Close: $25.02
+Previous candle close: $24.93
+Previous candle range: $0.10
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:13:00-05:00
+Counter-move size: $0.11
+Percentage of trend: 0.5%
+Price range: $0.02
+Open: $25.03
+High: $25.05
+Low: $25.02
+Close: $25.05
+Previous candle close: $25.02
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:14:00-05:00
+Counter-move size: $0.23
+Percentage of trend: 0.9%
+Price range: $0.13
+Open: $25.05
+High: $25.05
+Low: $24.92
+Close: $24.93
+Previous candle close: $25.05
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:15:00-05:00
+Counter-move size: $0.24
+Percentage of trend: 1.0%
+Price range: $0.01
+Open: $24.91
+High: $24.92
+Low: $24.91
+Close: $24.92
+Previous candle close: $24.93
+Previous candle range: $0.13
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:16:00-05:00
+Counter-move size: $0.25
+Percentage of trend: 1.0%
+Price range: $0.06
+Open: $24.92
+High: $24.96
+Low: $24.90
+Close: $24.91
+Previous candle close: $24.92
+Previous candle range: $0.01
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:17:00-05:00
+Counter-move size: $0.26
+Percentage of trend: 1.0%
+Price range: $0.03
+Open: $24.92
+High: $24.93
+Low: $24.90
+Close: $24.90
+Previous candle close: $24.91
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:18:00-05:00
+Counter-move size: $0.23
+Percentage of trend: 0.9%
+Price range: $0.04
+Open: $24.89
+High: $24.93
+Low: $24.89
+Close: $24.93
+Previous candle close: $24.90
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:19:00-05:00
+Counter-move size: $0.31
+Percentage of trend: 1.2%
+Price range: $0.06
+Open: $24.90
+High: $24.91
+Low: $24.85
+Close: $24.85
+Previous candle close: $24.93
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:20:00-05:00
+Counter-move size: $0.31
+Percentage of trend: 1.2%
+Price range: $0.00
+Open: $24.85
+High: $24.85
+Low: $24.85
+Close: $24.85
+Previous candle close: $24.85
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:21:00-05:00
+Counter-move size: $0.30
+Percentage of trend: 1.2%
+Price range: $0.02
+Open: $24.86
+High: $24.86
+Low: $24.84
+Close: $24.86
+Previous candle close: $24.85
+Previous candle range: $0.00
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:22:00-05:00
+Counter-move size: $0.32
+Percentage of trend: 1.3%
+Price range: $0.05
+Open: $24.87
+High: $24.89
+Low: $24.84
+Close: $24.84
+Previous candle close: $24.86
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:23:00-05:00
+Counter-move size: $0.31
+Percentage of trend: 1.2%
+Price range: $0.03
+Open: $24.87
+High: $24.88
+Low: $24.84
+Close: $24.85
+Previous candle close: $24.84
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:25:00-05:00
+Counter-move size: $0.43
+Percentage of trend: 1.7%
+Price range: $0.09
+Open: $24.82
+High: $24.82
+Low: $24.73
+Close: $24.73
+Previous candle close: $24.85
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:26:00-05:00
+Counter-move size: $0.49
+Percentage of trend: 2.0%
+Price range: $0.06
+Open: $24.72
+High: $24.72
+Low: $24.66
+Close: $24.67
+Previous candle close: $24.73
+Previous candle range: $0.09
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:27:00-05:00
+Counter-move size: $0.46
+Percentage of trend: 1.8%
+Price range: $0.06
+Open: $24.69
+High: $24.75
+Low: $24.69
+Close: $24.70
+Previous candle close: $24.67
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:28:00-05:00
+Counter-move size: $0.41
+Percentage of trend: 1.6%
+Price range: $0.09
+Open: $24.69
+High: $24.78
+Low: $24.69
+Close: $24.76
+Previous candle close: $24.70
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:29:00-05:00
+Counter-move size: $0.41
+Percentage of trend: 1.6%
+Price range: $0.02
+Open: $24.75
+High: $24.77
+Low: $24.75
+Close: $24.75
+Previous candle close: $24.76
+Previous candle range: $0.09
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:30:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.6%
+Price range: $0.03
+Open: $24.74
+High: $24.77
+Low: $24.74
+Close: $24.77
+Previous candle close: $24.75
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:31:00-05:00
+Counter-move size: $0.38
+Percentage of trend: 1.5%
+Price range: $0.02
+Open: $24.77
+High: $24.79
+Low: $24.77
+Close: $24.79
+Previous candle close: $24.77
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:32:00-05:00
+Counter-move size: $0.37
+Percentage of trend: 1.5%
+Price range: $0.02
+Open: $24.77
+High: $24.79
+Low: $24.77
+Close: $24.79
+Previous candle close: $24.79
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:33:00-05:00
+Counter-move size: $0.35
+Percentage of trend: 1.4%
+Price range: $0.02
+Open: $24.79
+High: $24.82
+Low: $24.79
+Close: $24.82
+Previous candle close: $24.79
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:34:00-05:00
+Counter-move size: $0.36
+Percentage of trend: 1.4%
+Price range: $0.00
+Open: $24.80
+High: $24.80
+Low: $24.80
+Close: $24.80
+Previous candle close: $24.82
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:35:00-05:00
+Counter-move size: $0.40
+Percentage of trend: 1.6%
+Price range: $0.07
+Open: $24.79
+High: $24.79
+Low: $24.72
+Close: $24.76
+Previous candle close: $24.80
+Previous candle range: $0.00
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:36:00-05:00
+Counter-move size: $0.41
+Percentage of trend: 1.6%
+Price range: $0.00
+Open: $24.75
+High: $24.75
+Low: $24.75
+Close: $24.75
+Previous candle close: $24.76
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:37:00-05:00
+Counter-move size: $0.43
+Percentage of trend: 1.7%
+Price range: $0.02
+Open: $24.75
+High: $24.75
+Low: $24.73
+Close: $24.73
+Previous candle close: $24.75
+Previous candle range: $0.00
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:38:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.6%
+Price range: $0.06
+Open: $24.71
+High: $24.77
+Low: $24.71
+Close: $24.77
+Previous candle close: $24.73
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:39:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.6%
+Price range: $0.05
+Open: $24.75
+High: $24.80
+Low: $24.75
+Close: $24.77
+Previous candle close: $24.77
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:40:00-05:00
+Counter-move size: $0.41
+Percentage of trend: 1.6%
+Price range: $0.06
+Open: $24.77
+High: $24.77
+Low: $24.71
+Close: $24.75
+Previous candle close: $24.77
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:41:00-05:00
+Counter-move size: $0.47
+Percentage of trend: 1.9%
+Price range: $0.07
+Open: $24.75
+High: $24.75
+Low: $24.69
+Close: $24.69
+Previous candle close: $24.75
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:42:00-05:00
+Counter-move size: $0.51
+Percentage of trend: 2.0%
+Price range: $0.03
+Open: $24.67
+High: $24.68
+Low: $24.65
+Close: $24.65
+Previous candle close: $24.69
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:43:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.5%
+Price range: $0.11
+Open: $24.67
+High: $24.78
+Low: $24.66
+Close: $24.78
+Previous candle close: $24.65
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:44:00-05:00
+Counter-move size: $0.40
+Percentage of trend: 1.6%
+Price range: $0.05
+Open: $24.77
+High: $24.77
+Low: $24.72
+Close: $24.76
+Previous candle close: $24.78
+Previous candle range: $0.11
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:45:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.6%
+Price range: $0.04
+Open: $24.81
+High: $24.81
+Low: $24.77
+Close: $24.77
+Previous candle close: $24.76
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:46:00-05:00
+Counter-move size: $0.39
+Percentage of trend: 1.5%
+Price range: $0.01
+Open: $24.78
+High: $24.78
+Low: $24.77
+Close: $24.77
+Previous candle close: $24.77
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:47:00-05:00
+Counter-move size: $0.41
+Percentage of trend: 1.6%
+Price range: $0.00
+Open: $24.75
+High: $24.75
+Low: $24.75
+Close: $24.75
+Previous candle close: $24.77
+Previous candle range: $0.01
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:48:00-05:00
+Counter-move size: $0.41
+Percentage of trend: 1.6%
+Price range: $0.02
+Open: $24.73
+High: $24.75
+Low: $24.73
+Close: $24.75
+Previous candle close: $24.75
+Previous candle range: $0.00
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:49:00-05:00
+Counter-move size: $0.40
+Percentage of trend: 1.6%
+Price range: $0.06
+Open: $24.74
+High: $24.79
+Low: $24.74
+Close: $24.77
+Previous candle close: $24.75
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:50:00-05:00
+Counter-move size: $0.41
+Percentage of trend: 1.6%
+Price range: $0.03
+Open: $24.77
+High: $24.77
+Low: $24.74
+Close: $24.75
+Previous candle close: $24.77
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:51:00-05:00
+Counter-move size: $0.47
+Percentage of trend: 1.9%
+Price range: $0.01
+Open: $24.70
+High: $24.70
+Low: $24.69
+Close: $24.69
+Previous candle close: $24.75
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:52:00-05:00
+Counter-move size: $0.47
+Percentage of trend: 1.9%
+Price range: $0.02
+Open: $24.69
+High: $24.70
+Low: $24.68
+Close: $24.69
+Previous candle close: $24.69
+Previous candle range: $0.01
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:53:00-05:00
+Counter-move size: $0.45
+Percentage of trend: 1.8%
+Price range: $0.05
+Open: $24.69
+High: $24.72
+Low: $24.68
+Close: $24.71
+Previous candle close: $24.69
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:54:00-05:00
+Counter-move size: $0.42
+Percentage of trend: 1.7%
+Price range: $0.04
+Open: $24.71
+High: $24.75
+Low: $24.71
+Close: $24.74
+Previous candle close: $24.71
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:55:00-05:00
+Counter-move size: $0.41
+Percentage of trend: 1.6%
+Price range: $0.00
+Open: $24.75
+High: $24.75
+Low: $24.75
+Close: $24.75
+Previous candle close: $24.74
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:56:00-05:00
+Counter-move size: $0.41
+Percentage of trend: 1.6%
+Price range: $0.03
+Open: $24.73
+High: $24.76
+Low: $24.73
+Close: $24.75
+Previous candle close: $24.75
+Previous candle range: $0.00
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:57:00-05:00
+Counter-move size: $0.32
+Percentage of trend: 1.3%
+Price range: $0.11
+Open: $24.75
+High: $24.84
+Low: $24.73
+Close: $24.84
+Previous candle close: $24.75
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:58:00-05:00
+Counter-move size: $0.26
+Percentage of trend: 1.0%
+Price range: $0.05
+Open: $24.88
+High: $24.90
+Low: $24.85
+Close: $24.90
+Previous candle close: $24.84
+Previous candle range: $0.11
+------------------------------
+
+Counter-move
+Time: 2024-12-09 14:59:00-05:00
+Counter-move size: $0.34
+Percentage of trend: 1.4%
+Price range: $0.08
+Open: $24.90
+High: $24.90
+Low: $24.82
+Close: $24.82
+Previous candle close: $24.90
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:00:00-05:00
+Counter-move size: $0.20
+Percentage of trend: 0.8%
+Price range: $0.14
+Open: $24.82
+High: $24.96
+Low: $24.82
+Close: $24.96
+Previous candle close: $24.82
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:01:00-05:00
+Counter-move size: $0.28
+Percentage of trend: 1.1%
+Price range: $0.01
+Open: $24.88
+High: $24.89
+Low: $24.88
+Close: $24.89
+Previous candle close: $24.96
+Previous candle range: $0.14
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:02:00-05:00
+Counter-move size: $0.28
+Percentage of trend: 1.1%
+Price range: $0.05
+Open: $24.90
+High: $24.93
+Low: $24.88
+Close: $24.88
+Previous candle close: $24.89
+Previous candle range: $0.01
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:03:00-05:00
+Counter-move size: $0.27
+Percentage of trend: 1.1%
+Price range: $0.10
+Open: $24.83
+High: $24.93
+Low: $24.83
+Close: $24.89
+Previous candle close: $24.88
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:04:00-05:00
+Counter-move size: $0.21
+Percentage of trend: 0.8%
+Price range: $0.07
+Open: $24.93
+High: $25.00
+Low: $24.93
+Close: $24.95
+Previous candle close: $24.89
+Previous candle range: $0.10
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:05:00-05:00
+Counter-move size: $0.16
+Percentage of trend: 0.6%
+Price range: $0.09
+Open: $24.99
+High: $25.03
+Low: $24.94
+Close: $25.01
+Previous candle close: $24.95
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:06:00-05:00
+Counter-move size: $0.17
+Percentage of trend: 0.7%
+Price range: $0.10
+Open: $25.04
+High: $25.07
+Low: $24.97
+Close: $24.99
+Previous candle close: $25.01
+Previous candle range: $0.09
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:07:00-05:00
+Counter-move size: $0.18
+Percentage of trend: 0.7%
+Price range: $0.05
+Open: $24.95
+High: $25.00
+Low: $24.95
+Close: $24.98
+Previous candle close: $24.99
+Previous candle range: $0.10
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:08:00-05:00
+Counter-move size: $0.14
+Percentage of trend: 0.6%
+Price range: $0.04
+Open: $24.98
+High: $25.02
+Low: $24.98
+Close: $25.02
+Previous candle close: $24.98
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:09:00-05:00
+Counter-move size: $0.11
+Percentage of trend: 0.4%
+Price range: $0.03
+Open: $25.02
+High: $25.05
+Low: $25.02
+Close: $25.05
+Previous candle close: $25.02
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:10:00-05:00
+Counter-move size: $0.11
+Percentage of trend: 0.4%
+Price range: $0.03
+Open: $25.02
+High: $25.06
+Low: $25.02
+Close: $25.06
+Previous candle close: $25.05
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:11:00-05:00
+Counter-move size: $0.21
+Percentage of trend: 0.8%
+Price range: $0.14
+Open: $25.03
+High: $25.09
+Low: $24.95
+Close: $24.95
+Previous candle close: $25.06
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:12:00-05:00
+Counter-move size: $0.19
+Percentage of trend: 0.8%
+Price range: $0.03
+Open: $25.00
+High: $25.00
+Low: $24.97
+Close: $24.97
+Previous candle close: $24.95
+Previous candle range: $0.14
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:13:00-05:00
+Counter-move size: $0.19
+Percentage of trend: 0.8%
+Price range: $0.03
+Open: $24.97
+High: $24.98
+Low: $24.95
+Close: $24.97
+Previous candle close: $24.97
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:14:00-05:00
+Counter-move size: $0.15
+Percentage of trend: 0.6%
+Price range: $0.05
+Open: $24.97
+High: $25.01
+Low: $24.96
+Close: $25.01
+Previous candle close: $24.97
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:15:00-05:00
+Counter-move size: $0.14
+Percentage of trend: 0.6%
+Price range: $0.02
+Open: $25.02
+High: $25.04
+Low: $25.02
+Close: $25.02
+Previous candle close: $25.01
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:16:00-05:00
+Counter-move size: $0.16
+Percentage of trend: 0.6%
+Price range: $0.08
+Open: $25.05
+High: $25.07
+Low: $24.99
+Close: $25.00
+Previous candle close: $25.02
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:17:00-05:00
+Counter-move size: $0.24
+Percentage of trend: 0.9%
+Price range: $0.07
+Open: $24.97
+High: $24.98
+Low: $24.91
+Close: $24.92
+Previous candle close: $25.00
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:18:00-05:00
+Counter-move size: $0.17
+Percentage of trend: 0.7%
+Price range: $0.08
+Open: $24.93
+High: $24.99
+Low: $24.91
+Close: $24.99
+Previous candle close: $24.92
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:19:00-05:00
+Counter-move size: $0.15
+Percentage of trend: 0.6%
+Price range: $0.03
+Open: $24.98
+High: $25.01
+Low: $24.98
+Close: $25.01
+Previous candle close: $24.99
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:20:00-05:00
+Counter-move size: $0.15
+Percentage of trend: 0.6%
+Price range: $0.04
+Open: $25.04
+High: $25.04
+Low: $25.00
+Close: $25.01
+Previous candle close: $25.01
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:21:00-05:00
+Counter-move size: $0.15
+Percentage of trend: 0.6%
+Price range: $0.02
+Open: $25.02
+High: $25.02
+Low: $25.00
+Close: $25.01
+Previous candle close: $25.01
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:22:00-05:00
+Counter-move size: $0.17
+Percentage of trend: 0.7%
+Price range: $0.04
+Open: $24.95
+High: $24.99
+Low: $24.95
+Close: $24.99
+Previous candle close: $25.01
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:23:00-05:00
+Counter-move size: $0.24
+Percentage of trend: 1.0%
+Price range: $0.08
+Open: $24.93
+High: $24.97
+Low: $24.89
+Close: $24.92
+Previous candle close: $24.99
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:24:00-05:00
+Counter-move size: $0.23
+Percentage of trend: 0.9%
+Price range: $0.07
+Open: $24.91
+High: $24.97
+Low: $24.90
+Close: $24.93
+Previous candle close: $24.92
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:25:00-05:00
+Counter-move size: $0.19
+Percentage of trend: 0.7%
+Price range: $0.10
+Open: $24.95
+High: $25.00
+Low: $24.90
+Close: $24.98
+Previous candle close: $24.93
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:26:00-05:00
+Counter-move size: $0.13
+Percentage of trend: 0.5%
+Price range: $0.11
+Open: $24.98
+High: $25.08
+Low: $24.97
+Close: $25.04
+Previous candle close: $24.98
+Previous candle range: $0.10
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:27:00-05:00
+Counter-move size: $0.18
+Percentage of trend: 0.7%
+Price range: $0.05
+Open: $25.03
+High: $25.03
+Low: $24.98
+Close: $24.98
+Previous candle close: $25.04
+Previous candle range: $0.11
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:28:00-05:00
+Counter-move size: $0.22
+Percentage of trend: 0.9%
+Price range: $0.02
+Open: $24.95
+High: $24.96
+Low: $24.94
+Close: $24.94
+Previous candle close: $24.98
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:29:00-05:00
+Counter-move size: $0.23
+Percentage of trend: 0.9%
+Price range: $0.03
+Open: $24.94
+High: $24.97
+Low: $24.93
+Close: $24.93
+Previous candle close: $24.94
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:30:00-05:00
+Counter-move size: $0.22
+Percentage of trend: 0.9%
+Price range: $0.04
+Open: $24.93
+High: $24.94
+Low: $24.90
+Close: $24.94
+Previous candle close: $24.93
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:31:00-05:00
+Counter-move size: $0.02
+Percentage of trend: 0.1%
+Price range: $0.19
+Open: $24.97
+High: $25.16
+Low: $24.97
+Close: $25.14
+Previous candle close: $24.94
+Previous candle range: $0.04
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:32:00-05:00
+Counter-move size: $0.03
+Percentage of trend: 0.1%
+Price range: $0.06
+Open: $25.19
+High: $25.19
+Low: $25.13
+Close: $25.13
+Previous candle close: $25.14
+Previous candle range: $0.19
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:33:00-05:00
+Counter-move size: $0.01
+Percentage of trend: 0.0%
+Price range: $0.10
+Open: $25.13
+High: $25.21
+Low: $25.11
+Close: $25.18
+Previous candle close: $25.13
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:34:00-05:00
+Counter-move size: $0.07
+Percentage of trend: 0.3%
+Price range: $0.07
+Open: $25.15
+High: $25.20
+Low: $25.13
+Close: $25.14
+Previous candle close: $25.18
+Previous candle range: $0.10
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:35:00-05:00
+Counter-move size: $0.12
+Percentage of trend: 0.5%
+Price range: $0.03
+Open: $25.11
+High: $25.11
+Low: $25.08
+Close: $25.08
+Previous candle close: $25.14
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:36:00-05:00
+Counter-move size: $0.11
+Percentage of trend: 0.5%
+Price range: $0.00
+Open: $25.10
+High: $25.10
+Low: $25.10
+Close: $25.10
+Previous candle close: $25.08
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:37:00-05:00
+Counter-move size: $0.15
+Percentage of trend: 0.6%
+Price range: $0.03
+Open: $25.08
+High: $25.09
+Low: $25.06
+Close: $25.06
+Previous candle close: $25.10
+Previous candle range: $0.00
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:38:00-05:00
+Counter-move size: $0.14
+Percentage of trend: 0.6%
+Price range: $0.03
+Open: $25.07
+High: $25.10
+Low: $25.07
+Close: $25.07
+Previous candle close: $25.06
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:39:00-05:00
+Counter-move size: $0.12
+Percentage of trend: 0.5%
+Price range: $0.06
+Open: $25.03
+High: $25.09
+Low: $25.03
+Close: $25.09
+Previous candle close: $25.07
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:40:00-05:00
+Counter-move size: $0.08
+Percentage of trend: 0.3%
+Price range: $0.05
+Open: $25.10
+High: $25.13
+Low: $25.08
+Close: $25.13
+Previous candle close: $25.09
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:41:00-05:00
+Counter-move size: $0.14
+Percentage of trend: 0.6%
+Price range: $0.06
+Open: $25.09
+High: $25.13
+Low: $25.07
+Close: $25.07
+Previous candle close: $25.13
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:42:00-05:00
+Counter-move size: $0.21
+Percentage of trend: 0.8%
+Price range: $0.07
+Open: $25.07
+High: $25.07
+Low: $25.00
+Close: $25.00
+Previous candle close: $25.07
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:43:00-05:00
+Counter-move size: $0.19
+Percentage of trend: 0.8%
+Price range: $0.06
+Open: $25.03
+High: $25.03
+Low: $24.96
+Close: $25.02
+Previous candle close: $25.00
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:44:00-05:00
+Counter-move size: $0.18
+Percentage of trend: 0.7%
+Price range: $0.07
+Open: $25.03
+High: $25.08
+Low: $25.01
+Close: $25.03
+Previous candle close: $25.02
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:45:00-05:00
+Counter-move size: $0.24
+Percentage of trend: 1.0%
+Price range: $0.06
+Open: $25.03
+High: $25.03
+Low: $24.97
+Close: $24.97
+Previous candle close: $25.03
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:46:00-05:00
+Counter-move size: $0.21
+Percentage of trend: 0.8%
+Price range: $0.02
+Open: $24.99
+High: $25.00
+Low: $24.98
+Close: $25.00
+Previous candle close: $24.97
+Previous candle range: $0.06
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:47:00-05:00
+Counter-move size: $0.20
+Percentage of trend: 0.8%
+Price range: $0.03
+Open: $25.00
+High: $25.01
+Low: $24.98
+Close: $25.01
+Previous candle close: $25.00
+Previous candle range: $0.02
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:48:00-05:00
+Counter-move size: $0.17
+Percentage of trend: 0.7%
+Price range: $0.05
+Open: $25.00
+High: $25.05
+Low: $25.00
+Close: $25.04
+Previous candle close: $25.01
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:49:00-05:00
+Counter-move size: $0.17
+Percentage of trend: 0.7%
+Price range: $0.03
+Open: $25.03
+High: $25.06
+Low: $25.03
+Close: $25.03
+Previous candle close: $25.04
+Previous candle range: $0.05
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:50:00-05:00
+Counter-move size: $0.09
+Percentage of trend: 0.4%
+Price range: $0.08
+Open: $25.04
+High: $25.12
+Low: $25.03
+Close: $25.12
+Previous candle close: $25.03
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:51:00-05:00
+Counter-move size: $0.11
+Percentage of trend: 0.4%
+Price range: $0.07
+Open: $25.12
+High: $25.17
+Low: $25.10
+Close: $25.10
+Previous candle close: $25.12
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:52:00-05:00
+Counter-move size: $0.09
+Percentage of trend: 0.4%
+Price range: $0.03
+Open: $25.10
+High: $25.13
+Low: $25.10
+Close: $25.12
+Previous candle close: $25.10
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:53:00-05:00
+Counter-move size: $0.01
+Percentage of trend: 0.0%
+Price range: $0.13
+Open: $25.09
+High: $25.21
+Low: $25.08
+Close: $25.20
+Previous candle close: $25.12
+Previous candle range: $0.03
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:55:00-05:00
+Counter-move size: $0.08
+Percentage of trend: 0.3%
+Price range: $0.10
+Open: $25.15
+High: $25.25
+Low: $25.15
+Close: $25.20
+Previous candle close: $25.25
+Previous candle range: $0.08
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:56:00-05:00
+Counter-move size: $0.06
+Percentage of trend: 0.2%
+Price range: $0.07
+Open: $25.20
+High: $25.27
+Low: $25.20
+Close: $25.22
+Previous candle close: $25.20
+Previous candle range: $0.10
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:57:00-05:00
+Counter-move size: $0.06
+Percentage of trend: 0.2%
+Price range: $0.03
+Open: $25.24
+High: $25.24
+Low: $25.21
+Close: $25.22
+Previous candle close: $25.22
+Previous candle range: $0.07
+------------------------------
+
+Counter-move
+Time: 2024-12-09 15:59:00-05:00
+Counter-move size: $0.10
+Percentage of trend: 0.4%
+Price range: $0.14
+Open: $25.30
+High: $25.35
+Low: $25.21
+Close: $25.21
+Previous candle close: $25.30
+Previous candle range: $0.05
+------------------------------
+
