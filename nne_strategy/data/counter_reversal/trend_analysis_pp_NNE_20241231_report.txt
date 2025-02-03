@@ -1,0 +1,23 @@
+Missing values before interpolation:
+Datetime      0
+Open          0
+High          0
+Low           0
+Close         0
+Volume        0
+min         327
+max         331
+Trend        30
+dtype: int64
+
+Missing values after interpolation and filling:
+Datetime    0
+Open        0
+High        0
+Low         0
+Close       0
+Volume      0
+min         8
+max         0
+Trend       0
+dtype: int64

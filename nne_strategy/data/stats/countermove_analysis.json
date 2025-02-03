@@ -1,0 +1,48 @@
+{
+    "positive": [
+        {
+            "SizeGroup": "Large",
+            "AvgDuration": 2.442622950819672,
+            "AvgPriceAction": 0.18968667619215343,
+            "AvgPricePct": 0.7404244029382172,
+            "AvgVolume": 30634.415300546447
+        },
+        {
+            "SizeGroup": "Medium",
+            "AvgDuration": 1.4802259887005649,
+            "AvgPriceAction": 0.06067566952462949,
+            "AvgPricePct": 0.23555912415669117,
+            "AvgVolume": 11092.983050847457
+        },
+        {
+            "SizeGroup": "Small",
+            "AvgDuration": 1.1971830985915493,
+            "AvgPriceAction": 0.018061619073572274,
+            "AvgPricePct": 0.07053704749458968,
+            "AvgVolume": 7230.205633802817
+        }
+    ],
+    "negative": [
+        {
+            "SizeGroup": "Large",
+            "AvgDuration": 2.345771144278607,
+            "AvgPriceAction": -0.18612061211125774,
+            "AvgPricePct": -0.7188824900413588,
+            "AvgVolume": 29388.86069651741
+        },
+        {
+            "SizeGroup": "Medium",
+            "AvgDuration": 1.4384615384615385,
+            "AvgPriceAction": -0.06082440889798695,
+            "AvgPricePct": -0.2364745638572353,
+            "AvgVolume": 10031.54358974359
+        },
+        {
+            "SizeGroup": "Small",
+            "AvgDuration": 1.2179487179487178,
+            "AvgPriceAction": -0.019316663497533564,
+            "AvgPricePct": -0.07531106455947346,
+            "AvgVolume": 6886.097435897436
+        }
+    ]
+}

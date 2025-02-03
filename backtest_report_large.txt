@@ -1,0 +1,468 @@
+TRADING SUMMARY REPORT
+================================================================================
+
+Total Trades: 38
+Winning Trades: 23
+Losing Trades: 15
+Win Rate: 60.53%
+Final P&L: $3,703.28
+
+DETAILED TRADE LIST
+================================================================================
+
+Trade #1
+Entry:
+  DateTime: 2024-12-04 10:01:00-05:00
+  Price: $27.71
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-04 10:02:00-05:00
+  Price: $27.79
+  Reason: Stop loss triggered at 27.79
+Trade P&L: $-89.24
+----------------------------------------
+Trade #2
+Entry:
+  DateTime: 2024-12-04 10:06:00-05:00
+  Price: $27.87
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Volume confirmation (25.0%); Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-04 10:07:00-05:00
+  Price: $28.04
+  Reason: Stop loss triggered at 28.04
+Trade P&L: $-182.21
+----------------------------------------
+Trade #3
+Entry:
+  DateTime: 2024-12-04 10:15:00-05:00
+  Price: $28.12
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-04 10:17:00-05:00
+  Price: $28.36
+  Reason: Large volume exceeded: 60694 > 47835
+Trade P&L: $-262.00
+----------------------------------------
+Trade #4
+Entry:
+  DateTime: 2024-12-04 10:22:00-05:00
+  Price: $28.28
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-04 10:24:00-05:00
+  Price: $28.02
+  Reason: Large price movement exceeded: 0.92% > 0.87%
+Trade P&L: $285.74
+----------------------------------------
+Trade #5
+Entry:
+  DateTime: 2024-12-05 09:59:00-05:00
+  Price: $26.09
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Volume confirmation (25.0%); Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-05 10:00:00-05:00
+  Price: $26.58
+  Reason: Large price movement exceeded: 1.86% > 0.87%
+Trade P&L: $-1995.29
+----------------------------------------
+Trade #6
+Entry:
+  DateTime: 2024-12-05 10:14:00-05:00
+  Price: $27.05
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH; Reversal signal (30.0%): BEARISH
+Exit:
+  DateTime: 2024-12-05 10:16:00-05:00
+  Price: $26.77
+  Reason: Large price movement exceeded: 1.04% > 0.87%
+Trade P&L: $1156.03
+----------------------------------------
+Trade #7
+Entry:
+  DateTime: 2024-12-05 10:17:00-05:00
+  Price: $26.75
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-05 10:20:00-05:00
+  Price: $26.61
+  Reason: Large duration exceeded: 3.0 > 2.6 min
+Trade P&L: $575.96
+----------------------------------------
+Trade #8
+Entry:
+  DateTime: 2024-12-06 10:07:00-05:00
+  Price: $25.86
+  Direction: LONG
+  Reason: Trend alignment (30.0%): UP; Volume confirmation (25.0%); Price action (15.0%): BULLISH
+Exit:
+  DateTime: 2024-12-06 10:08:00-05:00
+  Price: $25.80
+  Reason: Stop loss triggered at 25.80
+Trade P&L: $-121.92
+----------------------------------------
+Trade #9
+Entry:
+  DateTime: 2024-12-06 10:18:00-05:00
+  Price: $26.00
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-06 10:21:00-05:00
+  Price: $25.79
+  Reason: Large duration exceeded: 3.0 > 2.6 min
+Trade P&L: $416.56
+----------------------------------------
+Trade #10
+Entry:
+  DateTime: 2024-12-06 10:23:00-05:00
+  Price: $25.86
+  Direction: LONG
+  Reason: Trend alignment (30.0%): UP; Price action (15.0%): BULLISH; Reversal signal (30.0%): BULLISH
+Exit:
+  DateTime: 2024-12-06 10:26:00-05:00
+  Price: $26.14
+  Reason: Large duration exceeded: 3.0 > 2.2 min
+Trade P&L: $563.47
+----------------------------------------
+Trade #11
+Entry:
+  DateTime: 2024-12-06 10:35:00-05:00
+  Price: $26.21
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-06 10:38:00-05:00
+  Price: $26.09
+  Reason: Large duration exceeded: 3.0 > 2.6 min
+Trade P&L: $233.68
+----------------------------------------
+Trade #12
+Entry:
+  DateTime: 2024-12-09 10:02:00-05:00
+  Price: $26.33
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-09 10:03:00-05:00
+  Price: $26.31
+  Reason: Stop loss triggered at 26.31
+Trade P&L: $110.20
+----------------------------------------
+Trade #13
+Entry:
+  DateTime: 2024-12-10 09:59:00-05:00
+  Price: $23.85
+  Direction: LONG
+  Reason: Trend alignment (30.0%): UP; Price action (15.0%): BULLISH
+Exit:
+  DateTime: 2024-12-10 10:00:00-05:00
+  Price: $23.90
+  Reason: Stop loss triggered at 23.90
+Trade P&L: $115.96
+----------------------------------------
+Trade #14
+Entry:
+  DateTime: 2024-12-10 10:01:00-05:00
+  Price: $23.85
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH; Reversal signal (30.0%): BEARISH
+Exit:
+  DateTime: 2024-12-10 10:02:00-05:00
+  Price: $23.91
+  Reason: Stop loss triggered at 23.91
+Trade P&L: $-142.92
+----------------------------------------
+Trade #15
+Entry:
+  DateTime: 2024-12-10 10:08:00-05:00
+  Price: $23.83
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Volume confirmation (15.0%); Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-10 10:11:00-05:00
+  Price: $23.72
+  Reason: Large duration exceeded: 3.0 > 2.6 min
+Trade P&L: $262.46
+----------------------------------------
+Trade #16
+Entry:
+  DateTime: 2024-12-10 10:21:00-05:00
+  Price: $23.39
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-10 10:22:00-05:00
+  Price: $23.33
+  Reason: Stop loss triggered at 23.33
+Trade P&L: $143.16
+----------------------------------------
+Trade #17
+Entry:
+  DateTime: 2024-12-10 10:32:00-05:00
+  Price: $23.08
+  Direction: LONG
+  Reason: Trend alignment (30.0%): UP; Price action (15.0%): BULLISH
+Exit:
+  DateTime: 2024-12-10 10:33:00-05:00
+  Price: $23.27
+  Reason: Stop loss triggered at 23.27
+Trade P&L: $448.81
+----------------------------------------
+Trade #18
+Entry:
+  DateTime: 2024-12-12 09:59:00-05:00
+  Price: $25.46
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Volume confirmation (15.0%); Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-12 10:01:00-05:00
+  Price: $25.02
+  Reason: Large price movement exceeded: 1.75% > 0.87%
+Trade P&L: $591.09
+----------------------------------------
+Trade #19
+Entry:
+  DateTime: 2024-12-12 10:04:00-05:00
+  Price: $25.31
+  Direction: LONG
+  Reason: Trend alignment (30.0%): UP; Price action (15.0%): BULLISH
+Exit:
+  DateTime: 2024-12-12 10:05:00-05:00
+  Price: $25.20
+  Reason: Stop loss triggered at 25.20
+Trade P&L: $-141.56
+----------------------------------------
+Trade #20
+Entry:
+  DateTime: 2024-12-12 10:06:00-05:00
+  Price: $25.30
+  Direction: LONG
+  Reason: Trend alignment (30.0%): UP; Price action (15.0%): BULLISH
+Exit:
+  DateTime: 2024-12-12 10:07:00-05:00
+  Price: $25.34
+  Reason: Stop loss triggered at 25.34
+Trade P&L: $53.12
+----------------------------------------
+Trade #21
+Entry:
+  DateTime: 2024-12-13 10:05:00-05:00
+  Price: $23.73
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Volume confirmation (15.0%); Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-13 10:08:00-05:00
+  Price: $23.80
+  Reason: Large duration exceeded: 3.0 > 2.6 min
+Trade P&L: $-123.34
+----------------------------------------
+Trade #22
+Entry:
+  DateTime: 2024-12-13 10:14:00-05:00
+  Price: $23.86
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH; Reversal signal (30.0%): BEARISH
+Exit:
+  DateTime: 2024-12-13 10:15:00-05:00
+  Price: $23.75
+  Reason: Stop loss triggered at 23.75
+Trade P&L: $178.75
+----------------------------------------
+Trade #23
+Entry:
+  DateTime: 2024-12-13 10:35:00-05:00
+  Price: $24.08
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-13 10:38:00-05:00
+  Price: $24.15
+  Reason: Large duration exceeded: 3.0 > 2.6 min
+Trade P&L: $-124.51
+----------------------------------------
+Trade #24
+Entry:
+  DateTime: 2024-12-13 10:46:00-05:00
+  Price: $23.77
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-13 10:47:00-05:00
+  Price: $23.69
+  Reason: Stop loss triggered at 23.69
+Trade P&L: $133.52
+----------------------------------------
+Trade #25
+Entry:
+  DateTime: 2024-12-16 09:59:00-05:00
+  Price: $25.23
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-16 10:02:00-05:00
+  Price: $25.48
+  Reason: Large duration exceeded: 3.0 > 2.6 min
+Trade P&L: $-998.06
+----------------------------------------
+Trade #26
+Entry:
+  DateTime: 2024-12-16 10:07:00-05:00
+  Price: $25.33
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-16 10:10:00-05:00
+  Price: $25.29
+  Reason: Large duration exceeded: 3.0 > 2.6 min
+Trade P&L: $158.80
+----------------------------------------
+Trade #27
+Entry:
+  DateTime: 2024-12-16 10:16:00-05:00
+  Price: $25.14
+  Direction: LONG
+  Reason: Trend alignment (30.0%): UP; Price action (15.0%): BULLISH
+Exit:
+  DateTime: 2024-12-16 10:17:00-05:00
+  Price: $25.25
+  Reason: Stop loss triggered at 25.25
+Trade P&L: $437.10
+----------------------------------------
+Trade #28
+Entry:
+  DateTime: 2024-12-16 10:18:00-05:00
+  Price: $25.30
+  Direction: LONG
+  Reason: Trend alignment (30.0%): UP; Price action (15.0%): BULLISH
+Exit:
+  DateTime: 2024-12-16 10:19:00-05:00
+  Price: $25.42
+  Reason: Stop loss triggered at 25.42
+Trade P&L: $461.71
+----------------------------------------
+Trade #29
+Entry:
+  DateTime: 2024-12-16 10:21:00-05:00
+  Price: $25.31
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-16 10:22:00-05:00
+  Price: $25.33
+  Reason: Stop loss triggered at 25.33
+Trade P&L: $-99.25
+----------------------------------------
+Trade #30
+Entry:
+  DateTime: 2024-12-17 09:59:00-05:00
+  Price: $25.34
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Volume confirmation (25.0%); Price action (15.0%): BEARISH; Reversal signal (30.0%): BEARISH
+Exit:
+  DateTime: 2024-12-17 10:00:00-05:00
+  Price: $25.36
+  Reason: Stop loss triggered at 25.36
+Trade P&L: $-139.32
+----------------------------------------
+Trade #31
+Entry:
+  DateTime: 2024-12-17 10:06:00-05:00
+  Price: $25.55
+  Direction: LONG
+  Reason: Trend alignment (30.0%): UP; Price action (15.0%): BULLISH
+Exit:
+  DateTime: 2024-12-17 10:08:00-05:00
+  Price: $25.83
+  Reason: Large price movement exceeded: 1.10% > 0.88%
+Trade P&L: $1950.48
+----------------------------------------
+Trade #32
+Entry:
+  DateTime: 2024-12-17 10:19:00-05:00
+  Price: $24.86
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-17 10:20:00-05:00
+  Price: $24.90
+  Reason: Stop loss triggered at 24.90
+Trade P&L: $-277.94
+----------------------------------------
+Trade #33
+Entry:
+  DateTime: 2024-12-17 10:23:00-05:00
+  Price: $24.97
+  Direction: LONG
+  Reason: Trend alignment (30.0%): UP; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-17 10:24:00-05:00
+  Price: $24.90
+  Reason: Stop loss triggered at 24.90
+Trade P&L: $-487.62
+----------------------------------------
+Trade #34
+Entry:
+  DateTime: 2024-12-19 10:10:00-05:00
+  Price: $24.71
+  Direction: LONG
+  Reason: Trend alignment (30.0%): UP; Volume confirmation (25.0%); Price action (15.0%): BULLISH
+Exit:
+  DateTime: 2024-12-19 10:11:00-05:00
+  Price: $24.76
+  Reason: Stop loss triggered at 24.76
+Trade P&L: $105.35
+----------------------------------------
+Trade #35
+Entry:
+  DateTime: 2024-12-19 10:15:00-05:00
+  Price: $24.50
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Volume confirmation (25.0%); Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-19 10:18:00-05:00
+  Price: $24.26
+  Reason: Large duration exceeded: 3.0 > 2.6 min
+Trade P&L: $516.21
+----------------------------------------
+Trade #36
+Entry:
+  DateTime: 2024-12-20 10:07:00-05:00
+  Price: $23.11
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Volume confirmation (15.0%); Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-20 10:10:00-05:00
+  Price: $22.89
+  Reason: Large duration exceeded: 3.0 > 2.6 min
+Trade P&L: $484.61
+----------------------------------------
+Trade #37
+Entry:
+  DateTime: 2024-12-20 10:21:00-05:00
+  Price: $23.28
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BEARISH
+Exit:
+  DateTime: 2024-12-20 10:24:00-05:00
+  Price: $23.26
+  Reason: Large duration exceeded: 3.0 > 2.6 min
+Trade P&L: $42.14
+----------------------------------------
+Trade #38
+Entry:
+  DateTime: 2024-12-20 10:36:00-05:00
+  Price: $23.56
+  Direction: SHORT
+  Reason: Trend alignment (30.0%): DOWN; Price action (15.0%): BULLISH
+Exit:
+  DateTime: 2024-12-20 10:38:00-05:00
+  Price: $23.81
+  Reason: Large price movement exceeded: 1.08% > 0.87%
+Trade P&L: $-536.44
+----------------------------------------
