@@ -621,66 +621,62 @@ def show_countermoves_reversal_analysis_screen():
         st.subheader("Single File Processing")
 
         # File Uploader
-        uploaded_file = st.file_uploader("Upload a CSV file containing columns [Datetime, Close, Trend].", type="csv")
-        date_str = st.text_input("Enter Date (YYYYMMDD)", value="")
-
-        # Validate date format
-        def is_valid_yyyymmdd(date_text: str) -> bool:
-            try:
-                datetime.strptime(date_text, '%Y%m%d')
-                return True
-            except ValueError:
-                return False
+        uploaded_file = st.file_uploader("Upload a CSV file containing trend analysis data", type="csv")
 
         processed_df = None
 
         if st.button("Process Single File"):
             if uploaded_file is not None:
-                if date_str and not is_valid_yyyymmdd(date_str):
-                    st.error("Invalid date format. Please use YYYYMMDD.")
-                else:
-                    # Define input and output paths directly
-                    SAVE_DIR = r"D:\NNE_strategy\nne_strategy\data\preprocess_trend_data"
-                    os.makedirs(SAVE_DIR, exist_ok=True)
+                # Define input and output paths directly
+                SAVE_DIR = r"D:\NNE_strategy\nne_strategy\data\preprocess_trend_data"
+                os.makedirs(SAVE_DIR, exist_ok=True)
+                
+                try:
+                    # Read the uploaded file into a DataFrame
+                    df = pd.read_csv(uploaded_file)
+                    df['Datetime'] = pd.to_datetime(df['Datetime'])
                     
-                    output_file = os.path.join(SAVE_DIR, 
-                        f"trend_analysis_pp_NNE_{date_str or datetime.now().strftime('%Y%m%d')}.csv")
+                    # Debug information
+                    st.write("DataFrame columns:", df.columns.tolist())
+                    
+                    # Verify all required columns
+                    required_columns = ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume', 'min', 'max', 'Trend']
+                    missing_columns = [col for col in required_columns if col not in df.columns]
+                    if missing_columns:
+                        st.error(f"Missing required columns: {missing_columns}")
+                        return
+                    
+                    # Extract date from the data for filename
+                    date_str = df['Datetime'].iloc[0].strftime('%Y%m%d')
+                    
+                    # Save the input DataFrame to a temporary file
+                    temp_input = os.path.join(SAVE_DIR, f"temp_input_{date_str}.csv")
+                    df.to_csv(temp_input, index=False)
+                    
+                    # Define output file path
+                    output_file = os.path.join(SAVE_DIR, f"trend_analysis_pp_NNE_{date_str}.csv")
+                    
+                    # Use analyze_trends with the temporary file
+                    analyze_trends(temp_input, output_file)
+                    
+                    # Clean up temporary file
+                    if os.path.exists(temp_input):
+                        os.remove(temp_input)
+                    
+                    st.success(f"Analysis complete. Results saved to {output_file}")
+                    
+                    # Show preview of results
+                    try:
+                        result_df = pd.read_csv(output_file)
+                        st.write("Preview of analysis results:")
+                        st.write(result_df.head())
+                    except Exception as e:
+                        st.error(f"Error reading results: {str(e)}")
+                    
+                except Exception as e:
+                    st.error(f"Error analyzing file: {str(e)}")
+                    st.error("Please ensure the input file contains all required columns")
 
-                    # Process the data
-                    with st.spinner("Analyzing data..."):
-                        try:
-                            # Read the uploaded file into a DataFrame
-                            df = pd.read_csv(uploaded_file)
-                            df['Datetime'] = pd.to_datetime(df['Datetime'])
-                            
-                            # Add Action column based on trend changes
-                            df['Action'] = 'Normal'
-                            df.loc[df['Trend'] != df['Trend'].shift(), 'Action'] = 'Countermove'
-                            
-                            # Process the DataFrame
-                            segments = find_countermoves(df)
-                            processed_df = analyze_countermove_segments(df, segments)
-                            
-                            # Save the processed data
-                            processed_df.to_csv(output_file, index=False)
-                            st.success(f"Analysis complete. Results saved to {output_file}")
-                            
-                        except Exception as e:
-                            st.error(f"Error analyzing file: {str(e)}")
-                            st.error("Please ensure the input file contains required columns: Datetime, Close, Trend")
-
-        # Display and visualization code
-        if processed_df is not None:
-            st.write("Processed Data:")
-            st.dataframe(processed_df)
-            
-            # Add basic statistics
-            st.subheader("Analysis Statistics")
-            st.write(f"Total segments analyzed: {len(processed_df)}")
-            if len(processed_df) > 0:
-                st.write(f"Average duration: {processed_df['Duration'].mean():.2f} minutes")
-                st.write(f"Average price action: {processed_df['PriceAction'].mean():.4f}")
-            
     else:
         # Batch processing code remains the same
         st.subheader("Batch Processing Mode")
