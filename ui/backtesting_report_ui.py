@@ -23,9 +23,9 @@ import io
 
 # Directories used for the "Trend Analysis" screen
 RAW_DATA_FOLDER = r"D:\NNE_strategy\nne_strategy\data\raw"
-OUTPUT_FOLDER = r"D:\NNE_strategy\nne_strategy\data\stock_trend_complete"
+TREND_FOLDER = r"D:\NNE_strategy\nne_strategy\data\trend"
 os.makedirs(RAW_DATA_FOLDER, exist_ok=True)
-os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+os.makedirs(TREND_FOLDER, exist_ok=True)
 
 
 ###############################################################################
@@ -545,10 +545,62 @@ def show_trend_analysis_screen():
 
         # Save Results
         st.subheader("📥 Save Results")
-        save_name = st.text_input("Save filename", "trend_analysis_results.csv")
-        if st.button("Save Analysis"):
-            # Save logic here
-            st.success("Analysis saved successfully!")
+        # Get stock name and date from the uploaded file name
+        if uploaded_file is not None:
+            try:
+                # Extract stock name from file name
+                stock_name = uploaded_file.name.split('_')[1] if '_' in uploaded_file.name else 'unknown'
+                
+                # Get the date from the DataFrame
+                file_date = df['Datetime'].iloc[0].strftime('%Y-%m-%d')
+                
+                # Create filename in required format
+                save_name = f"trend_{stock_name}_{file_date}"
+                
+                if st.button("Save Analysis"):
+                    try:
+                        # Prepare the full save path
+                        save_path = os.path.join(TREND_FOLDER, f"{save_name}.csv")
+                        
+                        # Save the processed DataFrame with all analysis results
+                        processed_df = df.copy()
+                        processed_df['min'] = None
+                        processed_df['max'] = None
+                        
+                        # Sort points chronologically and add min/max points
+                        edited_points = edited_points.sort_values('Datetime')
+                        for _, row in edited_points.iterrows():
+                            match_idx = processed_df[processed_df['Datetime'] == row['Datetime']].index
+                            if len(match_idx) > 0:
+                                if pd.notna(row['min']):
+                                    processed_df.loc[match_idx[0], 'min'] = row['min']
+                                if pd.notna(row['max']):
+                                    processed_df.loc[match_idx[0], 'max'] = row['max']
+                        
+                        # Use the existing add_trend_indications function to properly set trends
+                        processed_df = add_trend_indications(processed_df)
+                        
+                        # Save to CSV
+                        processed_df.to_csv(save_path, index=False)
+                        
+                        # Show success message with file location
+                        st.success(f"Analysis saved successfully to:\n{save_path}")
+                        
+                        # Optional: Add download button
+                        with open(save_path, 'rb') as f:
+                            st.download_button(
+                                label="Download CSV",
+                                data=f,
+                                file_name=f"{save_name}.csv",
+                                mime='text/csv'
+                            )
+                            
+                    except Exception as e:
+                        st.error(f"Error saving analysis: {str(e)}")
+            except Exception as e:
+                st.error(f"Error processing file name or date: {str(e)}")
+        else:
+            st.warning("Please upload a file first")
 
 
 ###############################################################################
