@@ -17,11 +17,10 @@ class DataFetcher:
     def __init__(self, save_dir: Optional[Path] = None):
         """Initialize data fetcher with configuration"""
         if save_dir:
-            self.save_dir = save_dir
+            self.save_dir = Path(save_dir)
         else:
-            # Get absolute project root path
-            project_root = Path(__file__).resolve().parent.parent.parent
-            self.save_dir = project_root / config.get('data', 'directories', 'raw')
+            # Set the absolute path correctly
+            self.save_dir = Path(r"D:\NNE_strategy\nne_strategy\data\raw")
         
         logger.info(f"Data will be saved to: {self.save_dir.absolute()}")
         self.save_dir.mkdir(parents=True, exist_ok=True)
@@ -131,23 +130,18 @@ class DataFetcher:
                    data: pd.DataFrame,
                    ticker: str,
                    date: str) -> Optional[Path]:
-        """Save data to CSV using config settings
-        
-        Args:
-            data: OHLCV data
-            ticker: Stock symbol
-            date: Date string
-            
-        Returns:
-            Path to saved file or None if error
-        """
+        """Save data to CSV using specified naming convention"""
         try:
-            # Use config for file naming
-            prefix = config.get('data', 'file_prefix')
-            extension = config.get('data', 'file_extension')
-            date_str = pd.to_datetime(date).strftime('%Y%m%d')
-            filename = f"{prefix}{date_str}{extension}"
-            filepath = self.save_dir / filename
+            # Format date to yyyy-mm-dd
+            date_str = pd.to_datetime(date).strftime('%Y-%m-%d')
+            # Create filename in format: raw_AGEN_yyyy-mm-dd.csv
+            filename = f"raw_{ticker}_{date_str}.csv"
+            
+            # Create ticker-specific directory
+            ticker_dir = self.save_dir / ticker
+            ticker_dir.mkdir(exist_ok=True)
+            
+            filepath = ticker_dir / filename
             
             # Save to CSV
             data.to_csv(filepath, index=False)
@@ -189,17 +183,16 @@ def main():
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
     
-    # Parse command line arguments
-    if len(sys.argv) < 2:
-        logger.error("Please provide at least a start date (YYYYMMDD)")
-        logger.error("Usage: python data_fetcher.py START_DATE [END_DATE] [--ticker SYMBOL]")
-        sys.exit(1)
-        
     try:
-        # Get ticker from config
+        # Get ticker from config or command line
         ticker = config.get('trading', 'symbol')
         
         # Parse start date
+        if len(sys.argv) < 2:
+            logger.error("Please provide at least a start date (YYYYMMDD)")
+            logger.error("Usage: python data_fetcher.py START_DATE [END_DATE] [--ticker SYMBOL]")
+            sys.exit(1)
+            
         start_date = sys.argv[1]
         start = f"{start_date[:4]}-{start_date[4:6]}-{start_date[6:]}"
         
@@ -216,7 +209,7 @@ def main():
                 ticker = sys.argv[ticker_idx + 1]
         
         # Create data directory
-        raw_dir = Path(config.get('data', 'directories', 'raw'))
+        raw_dir = Path(r"D:\NNE_strategy\nne_strategy\data\raw")
         raw_dir.mkdir(parents=True, exist_ok=True)
         
         # Create fetcher and get data
@@ -228,7 +221,7 @@ def main():
         logger.info(f"Total dates processed: {len(results)}")
         logger.info(f"\nFiles saved to: {raw_dir.absolute()}")
         for date, data in results.items():
-            filename = f"{config.get('data', 'file_prefix')}{date.replace('-', '')}{config.get('data', 'file_extension')}"
+            filename = f"raw_{ticker}_{date}.csv"
             logger.info(f"{date}: {len(data)} records -> {filename}")
             
     except Exception as e:

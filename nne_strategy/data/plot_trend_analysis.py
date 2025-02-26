@@ -5,8 +5,8 @@ from scipy.signal import argrelextrema
 import os
 
 # Define paths globally
-input_folder = r'D:\NNE_strategy\nne_strategy\data\raw'
-output_folder = r'D:\NNE_strategy\nne_strategy\data\stock_trend_complete'
+input_folder = r'D:\NNE_strategy\nne_strategy\data\raw\AGEN'
+output_folder = r'D:\NNE_strategy\nne_strategy\data\stock_trend_complete\AGEN'
 
 # Create directories
 os.makedirs(input_folder, exist_ok=True)
