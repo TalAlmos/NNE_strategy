@@ -39,7 +39,8 @@ def create_analysis_chart(df):
     Distinguishes between uptrend and downtrend countermoves.
     
     Args:
-        df (pd.DataFrame): DataFrame with columns [Datetime, Open, High, Low, Close, Trend, Action]
+        df (pd.DataFrame): DataFrame with columns [Datetime, Open, High, Low, Close, Trend]
+                           and optionally [min, max]
     
     Returns:
         go.Figure: Plotly figure object
@@ -58,60 +59,83 @@ def create_analysis_chart(df):
         )
     )
 
-    # Add markers for reversals
-    reversals = df[df['Action'] == 'Reversal']
-    fig.add_trace(
-        go.Scatter(
-            x=reversals['Datetime'],
-            y=reversals['Close'],
-            mode='markers',
-            marker=dict(
-                symbol='star',
-                size=12,
-                color='yellow',
-                line=dict(width=2, color='black')
-            ),
-            name='Reversal Points'
+    # Add markers for minimum points (if they exist)
+    min_points = df[pd.notna(df['min'])]
+    if not min_points.empty:
+        fig.add_trace(
+            go.Scatter(
+                x=min_points['Datetime'],
+                y=min_points['min'],
+                mode='markers',
+                marker=dict(
+                    symbol='triangle-up',
+                    size=12,
+                    color='red',
+                    line=dict(width=2, color='black')
+                ),
+                name='Minimum Points'
+            )
         )
-    )
 
-    # Add markers for uptrend countermoves
-    uptrend_countermoves = df[(df['Action'] == 'Countermove') & (df['Trend'] == 'UpTrend')]
-    fig.add_trace(
-        go.Scatter(
-            x=uptrend_countermoves['Datetime'],
-            y=uptrend_countermoves['Close'],
-            mode='markers',
-            marker=dict(
-                symbol='triangle-down',  # Down triangle for pullbacks in uptrend
-                size=10,
-                color='red',
-                line=dict(width=1, color='black')
-            ),
-            name='Uptrend Countermoves'
+    # Add markers for maximum points (if they exist)
+    max_points = df[pd.notna(df['max'])]
+    if not max_points.empty:
+        fig.add_trace(
+            go.Scatter(
+                x=max_points['Datetime'],
+                y=max_points['max'],
+                mode='markers',
+                marker=dict(
+                    symbol='triangle-down',
+                    size=12,
+                    color='green',
+                    line=dict(width=2, color='black')
+                ),
+                name='Maximum Points'
+            )
         )
-    )
 
-    # Add markers for downtrend countermoves
-    downtrend_countermoves = df[(df['Action'] == 'Countermove') & (df['Trend'] == 'DownTrend')]
-    fig.add_trace(
-        go.Scatter(
-            x=downtrend_countermoves['Datetime'],
-            y=downtrend_countermoves['Close'],
-            mode='markers',
-            marker=dict(
-                symbol='triangle-up',  # Up triangle for rallies in downtrend
-                size=10,
-                color='green',
-                line=dict(width=1, color='black')
-            ),
-            name='Downtrend Countermoves'
-        )
-    )
+    # Add trend indicators if Trend column exists
+    if 'Trend' in df.columns:
+        # Add markers for uptrend
+        uptrend = df[df['Trend'] == 'UpTrend']
+        if not uptrend.empty:
+            fig.add_trace(
+                go.Scatter(
+                    x=uptrend['Datetime'],
+                    y=uptrend['Close'],
+                    mode='markers',
+                    marker=dict(
+                        symbol='triangle-up',
+                        size=8,
+                        color='green',
+                        opacity=0.5
+                    ),
+                    name='UpTrend'
+                )
+            )
+
+        # Add markers for downtrend
+        downtrend = df[df['Trend'] == 'DownTrend']
+        if not downtrend.empty:
+            fig.add_trace(
+                go.Scatter(
+                    x=downtrend['Datetime'],
+                    y=downtrend['Close'],
+                    mode='markers',
+                    marker=dict(
+                        symbol='triangle-down',
+                        size=8,
+                        color='red',
+                        opacity=0.5
+                    ),
+                    name='DownTrend'
+                )
+            )
 
     # Update layout
     fig.update_layout(
-        title='Price Action with Trends, Reversals and Countermoves',
+        title='Price Action with Trends and Key Points',
         yaxis_title='Price',
         xaxis_title='Date',
         template='plotly_dark',
@@ -388,63 +412,8 @@ def show_data_processing_screen():
 # SCREEN: TREND ANALYSIS
 ###############################################################################
 
-def ensure_min_max_alternating(selected_points: pd.DataFrame) -> pd.DataFrame:
-    """
-    Makes sure that min and max are strictly alternating. 
-    If two consecutive points are both minima or both maxima, the second is dropped.
-    Returns a filtered DataFrame that enforces alternation.
-    """
-    selected_points["type"] = selected_points.apply(
-        lambda row: "min" if not pd.isna(row["min"]) else "max" if not pd.isna(row["max"]) else "none",
-        axis=1
-    )
-    filtered_rows = []
-    last_type = None
-    for _, row in selected_points.iterrows():
-        if row["type"] != last_type and row["type"] != "none":
-            filtered_rows.append(row)
-            last_type = row["type"]
-    return pd.DataFrame(filtered_rows).drop(columns=["type"])
-
-
-def add_trend_indications(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Adds trend indications based on minima and maxima points.
-    From minima to maxima = UpTrend
-    From maxima to minima = DownTrend
-    """
-    # Create a copy to avoid modifying the original
-    df = df.copy()
-    
-    # Initialize Trend column
-    df['Trend'] = None
-    
-    # Get points where either min or max is not null
-    points = df[df['min'].notnull() | df['max'].notnull()].copy()
-    points['is_min'] = points['min'].notnull()
-    
-    # Process each pair of consecutive points
-    for i in range(len(points) - 1):
-        current_point = points.iloc[i]
-        next_point = points.iloc[i + 1]
-        
-        # Get the indices for the range in the original dataframe
-        start_idx = df.index[df['Datetime'] == current_point['Datetime']][0]
-        end_idx = df.index[df['Datetime'] == next_point['Datetime']][0]
-        
-        # Determine trend
-        if current_point['is_min'] and pd.notnull(next_point['max']):
-            # From min to max = UpTrend
-            df.loc[start_idx:end_idx, 'Trend'] = 'UpTrend'
-        elif pd.notnull(current_point['max']) and next_point['is_min']:
-            # From max to min = DownTrend
-            df.loc[start_idx:end_idx, 'Trend'] = 'DownTrend'
-    
-    return df
-
-
 def show_trend_analysis_screen():
-    """Displays the Trend Analysis UI with improved step-by-step workflow."""
+    """Displays the Trend Analysis UI with manual point creation functionality."""
     st.header("Trend Analysis")
 
     # Step 1: File Upload
@@ -518,257 +487,429 @@ def show_trend_analysis_screen():
             # Convert Datetime column to datetime type
             df['Datetime'] = pd.to_datetime(df['Datetime'])
             
-            # Step 2: Initial Detection Settings
-            st.subheader("2️⃣ Configure Point Detection")
-            col1, col2 = st.columns(2)
-            with col1:
-                n = st.number_input("Number of points to consider for local extrema", 
-                                  min_value=1, max_value=5, value=2)
-            with col2:
-                min_gap = st.number_input("Minimum minutes between points", 
-                                        min_value=1, max_value=30, value=5)
-
-            # Find local minima and maxima
-            df['min'] = df.iloc[argrelextrema(df['Close'].values, np.less_equal, order=n)[0]]['Close']
-            df['max'] = df.iloc[argrelextrema(df['Close'].values, np.greater_equal, order=n)[0]]['Close']
+            # Initialize empty points DataFrame for manual editing if not already in session state
+            if 'edited_points' not in st.session_state:
+                st.session_state.edited_points = pd.DataFrame(columns=['Datetime', 'min', 'max'])
             
-            # Process first and last points
-            first_point = df.iloc[0]
-            last_point = df.iloc[-1]
+            # Step 2: Manual Point Creation
+            st.subheader("2️⃣ Manual Point Creation")
+            st.write("Click on the chart to add minimum and maximum points. You can delete points if needed.")
             
-            # Add first point (09:30)
-            if first_point['Datetime'].time() == pd.Timestamp('09:30').time():
-                next_min_idx = df[pd.notna(df['min'])].index[0] if len(df[pd.notna(df['min'])]) > 0 else None
-                next_max_idx = df[pd.notna(df['max'])].index[0] if len(df[pd.notna(df['max'])]) > 0 else None
+            try:
+                # Import plotly_events for interactive editing
+                from streamlit_plotly_events import plotly_events
                 
-                if next_min_idx is not None and next_max_idx is not None:
-                    if next_min_idx < next_max_idx:
-                        df.loc[0, 'max'] = first_point['Close']
-                    else:
-                        df.loc[0, 'min'] = first_point['Close']
-            
-            # Add last point (15:59)
-            if last_point['Datetime'].time() == pd.Timestamp('15:59').time():
-                prev_min_idx = df[pd.notna(df['min'])].index[-1] if len(df[pd.notna(df['min'])]) > 0 else None
-                prev_max_idx = df[pd.notna(df['max'])].index[-1] if len(df[pd.notna(df['max'])]) > 0 else None
-                
-                if prev_min_idx is not None and prev_max_idx is not None:
-                    if prev_min_idx > prev_max_idx:
-                        df.loc[len(df)-1, 'max'] = last_point['Close']
-                    else:
-                        df.loc[len(df)-1, 'min'] = last_point['Close']
-
-            # Process extrema points
-            extrema = pd.concat([df[['Datetime', 'min']].dropna(), df[['Datetime', 'max']].dropna()])
-            extrema.sort_index(inplace=True)
-            
-            # Group by hour and select the highest maxima and lowest minima
-            extrema['Hour'] = extrema['Datetime'].dt.floor('h')
-            hourly_maxima = extrema.groupby('Hour')['max'].idxmax().dropna()
-            hourly_minima = extrema.groupby('Hour')['min'].idxmin().dropna()
-            
-            # Combine selected points
-            selected_points = extrema.loc[pd.concat([hourly_maxima, hourly_minima])].sort_index()
-            
-            # Add additional points at 1/3 and 2/3 of the data
-            if len(extrema) >= 3:
-                additional_indices = [len(extrema)//3, 2*len(extrema)//3]
-                additional_points = extrema.iloc[additional_indices]
-                selected_points = pd.concat([selected_points, additional_points]).sort_index()
-            
-            # Make sure min and max are alternating
-            selected_points = ensure_min_max_alternating(selected_points)
-            
-            # Ensure distance between points is greater than 5 minutes
-            selected_points = selected_points.loc[
-                selected_points['Datetime'].diff().fillna(pd.Timedelta(minutes=6)) > pd.Timedelta(minutes=5)
-            ]
-
-            # Step 3: Show Initial Plot
-            st.subheader("3️⃣ Review Auto-Detected Points")
-            
-            def plot_points(points_df):
-                fig = go.Figure()
-                
-                # Base price line
-                fig.add_trace(
-                    go.Scatter(
-                        x=df["Datetime"],
-                        y=df["Close"],
-                        mode="lines",
-                        name="Close Price"
+                # Create function to generate the interactive chart
+                def create_interactive_chart(df, points_df):
+                    fig = go.Figure()
+                    
+                    # Add price line
+                    fig.add_trace(
+                        go.Scatter(
+                            x=df['Datetime'],
+                            y=df['Close'],
+                            mode='lines',
+                            name='Close Price',
+                            line=dict(color='blue', width=1)
+                        )
                     )
+                    
+                    # Add minima points
+                    min_points = points_df[pd.notna(points_df['min'])]
+                    if not min_points.empty:
+                        fig.add_trace(
+                            go.Scatter(
+                                x=min_points['Datetime'],
+                                y=min_points['min'],
+                                mode='markers',
+                                name='Minima',
+                                marker=dict(
+                                    color='red',
+                                    size=10,
+                                    symbol='circle'
+                                ),
+                                customdata=min_points.index.tolist(),
+                                hovertemplate='Time: %{x}<br>Price: %{y}<br>Index: %{customdata}<extra></extra>'
+                            )
+                        )
+                    
+                    # Add maxima points
+                    max_points = points_df[pd.notna(points_df['max'])]
+                    if not max_points.empty:
+                        fig.add_trace(
+                            go.Scatter(
+                                x=max_points['Datetime'],
+                                y=max_points['max'],
+                                mode='markers',
+                                name='Maxima',
+                                marker=dict(
+                                    color='green',
+                                    size=10,
+                                    symbol='circle'
+                                ),
+                                customdata=max_points.index.tolist(),
+                                hovertemplate='Time: %{x}<br>Price: %{y}<br>Index: %{customdata}<extra></extra>'
+                            )
+                        )
+                    
+                    # Update layout
+                    fig.update_layout(
+                        title='Interactive Price Chart - Click to Add Points',
+                        xaxis_title='Time',
+                        yaxis_title='Price',
+                        height=600,
+                        hovermode='closest',
+                        dragmode='pan'  # Set dragmode to 'pan' for better navigation
+                    )
+                    
+                    # Add configuration for better user experience
+                    fig.update_layout(
+                        modebar=dict(
+                            orientation='v',
+                            remove=[]
+                        )
+                    )
+                    
+                    return fig
+                
+                # Set up edit mode selection
+                edit_mode = st.radio(
+                    "Edit Mode:",
+                    ["View Only", "Add Min Point", "Add Max Point", "Delete Point"],
+                    horizontal=True,
+                    key="edit_mode_select"
                 )
-
-                # Plot minima and maxima
-                min_points = points_df[pd.notna(points_df["min"])]
-                max_points = points_df[pd.notna(points_df["max"])]
                 
-                if not min_points.empty:
-                    fig.add_trace(
-                        go.Scatter(
-                            x=min_points["Datetime"],
-                            y=min_points["min"],
-                            mode="markers",
-                            marker=dict(color="red", size=6),
-                            name="Local Minima"
-                        )
+                # Create the interactive chart
+                fig = create_interactive_chart(df, st.session_state.edited_points)
+                
+                # Only capture and process events if we're not in view-only mode
+                if edit_mode != "View Only":
+                    # Display the chart and capture click events
+                    selected_points = plotly_events(
+                        fig, 
+                        click_event=True,
+                        select_event=False,
+                        override_height=600,
+                        override_width="100%",
+                        key=f"interactive_chart_{edit_mode}"
                     )
-                
-                if not max_points.empty:
-                    fig.add_trace(
-                        go.Scatter(
-                            x=max_points["Datetime"],
-                            y=max_points["max"],
-                            mode="markers",
-                            marker=dict(color="green", size=6),
-                            name="Local Maxima"
-                        )
-                    )
+                    
+                    # Process click events only when points are actually selected
+                    if selected_points and len(selected_points) > 0:
+                        point = selected_points[0]
+                        x_val = pd.to_datetime(point['x'])
+                        y_val = point['y']
+                        
+                        # Fix timezone issue
+                        if df['Datetime'].dt.tz is not None:
+                            if x_val.tz is None:
+                                # Add timezone to match df
+                                x_val = x_val.tz_localize(df['Datetime'].dt.tz)
+                        else:
+                            if x_val.tz is not None:
+                                # Remove timezone from x_val
+                                x_val = x_val.tz_localize(None)
+                        
+                        # Find the closest time in the original dataframe
+                        closest_idx = None
+                        min_diff = pd.Timedelta.max
+                        
+                        for idx, row_time in enumerate(df['Datetime']):
+                            # Ensure both times are comparable
+                            if row_time.tz != x_val.tz:
+                                if row_time.tz is None:
+                                    compare_time = row_time
+                                else:
+                                    compare_time = row_time.tz_localize(None)
+                                    
+                                if x_val.tz is None:
+                                    compare_x = x_val
+                                else:
+                                    compare_x = x_val.tz_localize(None)
+                            else:
+                                compare_time = row_time
+                                compare_x = x_val
+                            
+                            diff = abs(compare_time - compare_x)
+                            if diff < min_diff:
+                                min_diff = diff
+                                closest_idx = idx
+                        
+                        if closest_idx is not None:
+                            closest_time = df.loc[closest_idx, 'Datetime']
+                            y_val = df.loc[closest_idx, 'Close']  # Use the actual close price at that time
+                        else:
+                            st.warning("Could not find a matching time point in the data.")
+                            closest_time = x_val
+                        
+                        # Handle different edit modes
+                        if edit_mode == "Add Min Point":
+                            # Check if a point already exists at this time
+                            existing = st.session_state.edited_points[
+                                st.session_state.edited_points['Datetime'] == closest_time
+                            ]
+                            
+                            if not existing.empty:
+                                # Update existing point
+                                idx = existing.index[0]
+                                st.session_state.edited_points.loc[idx, 'min'] = y_val
+                                st.session_state.edited_points.loc[idx, 'max'] = None
+                                st.success(f"Updated point at {closest_time.strftime('%H:%M:%S')} to minimum")
+                            else:
+                                # Add new point
+                                new_point = pd.DataFrame({
+                                    'Datetime': [closest_time],
+                                    'min': [y_val],
+                                    'max': [None]
+                                })
+                                st.session_state.edited_points = pd.concat([st.session_state.edited_points, new_point])
+                                st.success(f"Added minimum point at {closest_time.strftime('%H:%M:%S')}")
+                            
+                            # Sort points by datetime
+                            st.session_state.edited_points = st.session_state.edited_points.sort_values('Datetime').reset_index(drop=True)
+                            
+                        elif edit_mode == "Add Max Point":
+                            # Check if a point already exists at this time
+                            existing = st.session_state.edited_points[
+                                st.session_state.edited_points['Datetime'] == closest_time
+                            ]
+                            
+                            if not existing.empty:
+                                # Update existing point
+                                idx = existing.index[0]
+                                st.session_state.edited_points.loc[idx, 'max'] = y_val
+                                st.session_state.edited_points.loc[idx, 'min'] = None
+                                st.success(f"Updated point at {closest_time.strftime('%H:%M:%S')} to maximum")
+                            else:
+                                # Add new point
+                                new_point = pd.DataFrame({
+                                    'Datetime': [closest_time],
+                                    'min': [None],
+                                    'max': [y_val]
+                                })
+                                st.session_state.edited_points = pd.concat([st.session_state.edited_points, new_point])
+                                st.success(f"Added maximum point at {closest_time.strftime('%H:%M:%S')}")
+                            
+                            # Sort points by datetime
+                            st.session_state.edited_points = st.session_state.edited_points.sort_values('Datetime').reset_index(drop=True)
+                            
+                        elif edit_mode == "Delete Point":
+                            # Delete the selected point
+                            if 'customdata' in point:
+                                idx = point['customdata']
+                                if idx < len(st.session_state.edited_points):
+                                    point_time = st.session_state.edited_points.loc[idx, 'Datetime']
+                                    st.session_state.edited_points = st.session_state.edited_points.drop(idx).reset_index(drop=True)
+                                    st.success(f"Deleted point at {point_time.strftime('%H:%M:%S')}")
 
-                # Draw trend lines - improved version
-                points_df = points_df.sort_values('Datetime')  # Ensure points are in chronological order
+                        # Show updated points
+                        st.write("Current Points:")
+                        st.dataframe(st.session_state.edited_points[['Datetime', 'min', 'max']].sort_values('Datetime'))
+                else:
+                    # In view-only mode, just display the chart without event handling
+                    st.plotly_chart(fig, use_container_width=True)
+
+                # Add helper text
+                st.markdown("""
+                ### How to use:
+                - **View Only**: See your current points without making changes
+                - **Add Min Point**: Click anywhere on the chart to add a minimum point (red)
+                - **Add Max Point**: Click anywhere on the chart to add a maximum point (green)
+                - **Delete Point**: Click on an existing point to remove it
                 
+                For optimal trend analysis, ensure that minimum and maximum points alternate.
+                """)
+
+            except ImportError:
+                st.error("The streamlit-plotly-events package is required for interactive editing.")
+                st.code("pip install streamlit-plotly-events", language="bash")
+                st.warning("Please install the package and restart the application.")
+            except Exception as e:
+                st.error(f"An unexpected error occurred in the interactive chart: {str(e)}")
+                st.exception(e)
+            
+            # Step 3: Generate Trend Analysis
+            st.subheader("3️⃣ Generate Trend Analysis")
+            
+            if st.button("Generate Trend Analysis"):
+                if len(st.session_state.edited_points) < 2:
+                    st.error("You need at least 2 points to analyze trends.")
+                    return
+                
+                # Ensure points alternate between min and max
+                points_df = st.session_state.edited_points.copy().sort_values('Datetime').reset_index(drop=True)
+                
+                # Analyze trends
+                trends = []
                 for i in range(len(points_df) - 1):
                     start = points_df.iloc[i]
                     end = points_df.iloc[i + 1]
                     
-                    # Get the y-values, handling both min and max columns
-                    start_y = start['min'] if pd.notna(start['min']) else start['max']
-                    end_y = end['min'] if pd.notna(end['min']) else end['max']
+                    if pd.notna(start['min']) and pd.notna(end['max']):
+                        trend_type = 'UpTrend'
+                        start_price = start['min']
+                        end_price = end['max']
+                    elif pd.notna(start['max']) and pd.notna(end['min']):
+                        trend_type = 'DownTrend'
+                        start_price = start['max']
+                        end_price = end['min']
+                    else:
+                        continue
                     
-                    # Only draw line if we have valid points
-                    if pd.notna(start_y) and pd.notna(end_y):
-                        fig.add_trace(
-                            go.Scatter(
-                                x=[start["Datetime"], end["Datetime"]],
-                                y=[start_y, end_y],
-                                mode="lines",
-                                line=dict(color="orange", width=2),
-                                showlegend=False
-                            )
-                        )
-
-                fig.update_layout(
-                    title="Price Trend Analysis",
-                    xaxis_title="Time",
-                    yaxis_title="Price",
-                    height=600,
-                    showlegend=True,
-                    hovermode='closest'
-                )
+                    trends.append({
+                        'Trend Type': trend_type,
+                        'Start Time': start['Datetime'],
+                        'Start Price': start_price,
+                        'End Time': end['Datetime'],
+                        'End Price': end_price
+                    })
                 
-                return fig
+                processed_df = df.copy()
+                processed_df['min'] = None
+                processed_df['max'] = None
+                processed_df['Trend'] = None
+                
+                # Add points to processed dataframe
+                for _, row in points_df.iterrows():
+                    # Find the matching datetime
+                    match_idx = processed_df[processed_df['Datetime'] == row['Datetime']].index
+                    if len(match_idx) > 0:
+                        if pd.notna(row['min']):
+                            processed_df.loc[match_idx[0], 'min'] = row['min']
+                        if pd.notna(row['max']):
+                            processed_df.loc[match_idx[0], 'max'] = row['max']
+                
+                # Apply trends to the dataframe
+                for trend in trends:
+                    mask = (processed_df['Datetime'] >= trend['Start Time']) & (processed_df['Datetime'] <= trend['End Time'])
+                    processed_df.loc[mask, 'Trend'] = trend['Trend Type']
+                
+                # Create analysis chart
+                fig = create_analysis_chart(processed_df)
+                st.plotly_chart(fig, use_container_width=True)
+                
+                # Display trend summary
+                st.subheader("Trend Summary")
+                if trends:
+                    trend_df = pd.DataFrame(trends)
+                    trend_df['Duration (min)'] = (trend_df['End Time'] - trend_df['Start Time']).dt.total_seconds() / 60
+                    trend_df['Price Change'] = trend_df['End Price'] - trend_df['Start Price']
+                    trend_df['% Change'] = (trend_df['Price Change'] / trend_df['Start Price']) * 100
+                    st.dataframe(trend_df)
+                else:
+                    st.warning("No valid trends identified. Please ensure you have alternating min/max points.")
 
-            # Initial plot with processed points
-            st.plotly_chart(plot_points(selected_points), use_container_width=True, key="initial_plot")
-
-            # Step 4: Point Editing
-            st.subheader("4️⃣ Edit Points")
-            
-            # Initialize session state for edited points if not exists
-            if 'edited_points' not in st.session_state:
-                st.session_state.edited_points = selected_points.copy()
-
-            # Edit points
-            edited_points = st.data_editor(
-                st.session_state.edited_points,
-                use_container_width=True,
-                num_rows="dynamic",
-                key="points_editor",
-                column_config={
-                    "Datetime": st.column_config.DatetimeColumn(
-                        "Datetime",
-                        format="MM/DD/YYYY HH:mm:ss",
-                        step=60
-                    ),
-                    "min": "Minimum",
-                    "max": "Maximum"
-                },
-                on_change=lambda: plot_points(st.session_state.edited_points)
-            )
-
-            # Add new point button
-            if st.button("Add New Point"):
-                new_point = pd.DataFrame({
-                    'Datetime': [df['Datetime'].iloc[len(df)//2]],
-                    'min': [None],
-                    'max': [None]
-                })
-                st.session_state.edited_points = pd.concat([edited_points, new_point]).sort_values('Datetime')
-
-            # Step 5: Auto-refresh plot with edited points
-            st.subheader("5️⃣ Updated Visualization")
-            st.plotly_chart(plot_points(edited_points), use_container_width=True, key="updated_plot")
-
-            # Save Results
-            st.subheader("📥 Save Results")
-            # Get stock name and date from the uploaded file name
-            if uploaded_file is not None:
-                try:
-                    # Extract stock name from file name
-                    stock_name = uploaded_file.name.split('_')[1] if '_' in uploaded_file.name else 'unknown'
+                # (NEW) Store processed_df in session state so it stays available
+                st.session_state.processed_df = processed_df
+                st.success("Trend analysis generated. You can now proceed to Save Analysis.")
                     
-                    # Get the date from the DataFrame
-                    file_date = df['Datetime'].iloc[0].strftime('%Y-%m-%d')
-                    
-                    # Create filename in required format
-                    save_name = f"trend_{stock_name}_{file_date}"
-                    
-                    if st.button("Save Analysis"):
-                        try:
-                            # Prepare the full save path
-                            save_path = os.path.join(TREND_FOLDER, f"{save_name}.csv")
-                            
-                            # Save the processed DataFrame with all analysis results
-                            processed_df = df.copy()
-                            processed_df['min'] = None
-                            processed_df['max'] = None
-                            
-                            # Sort points chronologically and add min/max points
-                            edited_points = edited_points.sort_values('Datetime')
-                            for _, row in edited_points.iterrows():
-                                match_idx = processed_df[processed_df['Datetime'] == row['Datetime']].index
-                                if len(match_idx) > 0:
-                                    if pd.notna(row['min']):
-                                        processed_df.loc[match_idx[0], 'min'] = row['min']
-                                    if pd.notna(row['max']):
-                                        processed_df.loc[match_idx[0], 'max'] = row['max']
-                            
-                            # Use the existing add_trend_indications function to properly set trends
-                            processed_df = add_trend_indications(processed_df)
-                            
-                            # Save to CSV
-                            processed_df.to_csv(save_path, index=False)
-                            
-                            # Show success message with file location
-                            st.success(f"Analysis saved successfully to:\n{save_path}")
-                            
-                            # Optional: Add download button
-                            with open(save_path, 'rb') as f:
-                                st.download_button(
-                                    label="Download CSV",
-                                    data=f,
-                                    file_name=f"{save_name}.csv",
-                                    mime='text/csv'
-                                )
-                                
-                        except Exception as e:
-                            st.error(f"Error saving analysis: {str(e)}")
-                except Exception as e:
-                    st.error(f"Error processing file name or date: {str(e)}")
-            else:
-                st.warning("Please upload a file first")
         except Exception as e:
             st.error(f"Error processing file: {str(e)}")
+            st.exception(e)
     else:
         st.info("Please upload a CSV file to begin analysis.")
-        # Early return if no file is uploaded
         return
+    
+    # Step 4: Save Analysis
+    st.subheader("4️⃣ Save Analysis")
+    col1, col2 = st.columns(2)
+    with col1:
+        stock_name = st.text_input("Enter Stock Symbol:", value="STOCK")
+        # Ensure stock name is valid for filenames
+        stock_name = re.sub(r'[^\w\-]', '_', stock_name)
+    with col2:
+        # We'll fetch a date if possible, else just use today's date
+        if 'processed_df' in st.session_state and not st.session_state.processed_df.empty:
+            file_date = st.session_state.processed_df['Datetime'].iloc[0].strftime('%Y-%m-%d')
+        else:
+            file_date = date.today().strftime("%Y-%m-%d")
+        st.write(f"Analysis Date: {file_date}")
+
+    # Create filename in required format
+    save_name = f"trend_{stock_name}_{file_date}"
+
+    # Add option to choose save location
+    use_default_folder = st.checkbox("Use default save location", value=True)
+
+    if not use_default_folder:
+        custom_folder = st.text_input("Enter custom save folder path:")
+        save_folder = custom_folder if custom_folder else TREND_FOLDER
+    else:
+        save_folder = TREND_FOLDER
+
+    if st.button("Save Analysis"):
+        # Retrieve the df from session state
+        processed_df = st.session_state.get("processed_df")
+
+        # Basic check to prevent crashes
+        if processed_df is None or processed_df.empty:
+            st.error("No data to save. Please generate trend analysis first.")
+            return
+
+        try:
+            # Diagnostic info
+            st.info("Debug info:")
+            st.write(f"- Directory exists: {os.path.exists(save_folder)}")
+            st.write(f"- Directory writable: {os.access(save_folder, os.W_OK)}")
+            st.write(f"- DataFrame shape: {processed_df.shape}")
+            st.write(f"- DataFrame columns: {processed_df.columns.tolist()}")
+
+            os.makedirs(save_folder, exist_ok=True)
+            save_path = os.path.join(save_folder, f"{save_name}.csv")
+            st.write(f"- Full save path: {save_path}")
+
+            # Convert df to CSV in memory
+            buffer = io.StringIO()
+            processed_df.to_csv(buffer, index=False)
+            buffer.seek(0)
+            csv_data = buffer.getvalue()
+            st.write(f"- DataFrame successfully converted to CSV (size: {len(csv_data)} bytes)")
+
+            # Write it to disk
+            with open(save_path, 'w', newline='') as f:
+                f.write(csv_data)
+
+            # Verify creation
+            if os.path.exists(save_path):
+                st.success(f"Analysis saved successfully to:\n{save_path}")
+                # Provide a download button
+                st.download_button(
+                    label="Download CSV",
+                    data=csv_data,
+                    file_name=f"{save_name}.csv",
+                    mime='text/csv'
+                )
+            else:
+                st.error(f"File was not created at {save_path} despite no errors.")
+                st.warning("You can still download the file below:")
+                st.download_button(
+                    label="Download CSV directly",
+                    data=csv_data,
+                    file_name=f"{save_name}.csv",
+                    mime='text/csv'
+                )
+        except Exception as e:
+            st.error(f"Error saving analysis: {str(e)}")
+            st.exception(e)
+            # Fallback: allow direct download
+            try:
+                buffer = io.StringIO()
+                processed_df.to_csv(buffer, index=False)
+                buffer.seek(0)
+                st.warning("File couldn't be saved locally, but you can download it:")
+                st.download_button(
+                    label="Download CSV (recovery)",
+                    data=buffer.getvalue(),
+                    file_name=f"{save_name}.csv",
+                    mime='text/csv'
+                )
+            except Exception as download_err:
+                st.error(f"Also failed to provide download: {str(download_err)}")
 
 
 ###############################################################################
-# ADDITIONAL IMPORTS FOR REVERSAL ANALYSIS
+# SCREEN: REVERSAL ANALYSIS
 ###############################################################################
 
 def show_countermoves_reversal_analysis_screen():
@@ -838,7 +979,7 @@ def show_countermoves_reversal_analysis_screen():
                             st.subheader("Visual Analysis")
                             fig = create_analysis_chart(result_df)
                             st.plotly_chart(fig, use_container_width=True)
-                            
+
                             col1, col2, col3 = st.columns(3)
                             with col1:
                                 st.metric("Total Reversals", 
@@ -864,18 +1005,17 @@ def show_countermoves_reversal_analysis_screen():
                             
                     except Exception as e:
                         st.error(f"Error creating visualization: {str(e)}")
-                        st.exception(e)  # Using st.exception instead of exc_info
+                        st.exception(e)
                 
                 except Exception as e:
                     st.error(f"Error analyzing file: {str(e)}")
                     st.error("Please ensure the input file contains all required columns")
 
-    else:
-        # Batch processing code remains the same
-        st.subheader("Batch Processing Mode")
-        input_dir = st.text_input("Input Directory", 
+        else:
+            st.subheader("Batch Processing Mode")
+            input_dir = st.text_input("Input Directory", 
             value=r"D:\NNE_strategy\nne_strategy\data\preprocess_trend_data")
-        output_dir = st.text_input("Output Directory", 
+            output_dir = st.text_input("Output Directory", 
             value=r"D:\NNE_strategy\nne_strategy\data\counter_riversal_analysis")
 
         if st.button("Start Batch Processing"):
