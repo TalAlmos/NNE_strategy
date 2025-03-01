@@ -1041,6 +1041,11 @@ def analyze_statistics(df):
         tuple: (pos_grouped_stats, neg_grouped_stats, reversals)
     """
     df = df.copy()
+    is_streamlit_context = True
+    try:
+        _ = st.session_state  # Will raise exception if outside Streamlit context
+    except:
+        is_streamlit_context = False
 
     # Ensure 'Action' is present, run find_countermoves if needed.
     if 'Action' not in df.columns:
@@ -1048,14 +1053,95 @@ def analyze_statistics(df):
 
     # Use the new grouping logic instead of the old row-based segments:
     grouped_df = group_and_analyze_countermoves(df)
+    
+    # Fix column naming inconsistencies
+    
+    # Map PriceChangePct to PricePct
+    if 'PriceChangePct' in grouped_df.columns and 'PricePct' not in grouped_df.columns:
+        grouped_df['PricePct'] = grouped_df['PriceChangePct']
+        if is_streamlit_context:
+            st.info("Mapped 'PriceChangePct' to 'PricePct' for compatibility")
+    
+    # Add PriceAction column if missing - should be absolute price change
+    if 'PriceAction' not in grouped_df.columns:
+        # Use PriceChange as PriceAction if available (absolute, not percentage)
+        if 'PriceChange' in grouped_df.columns:
+            grouped_df['PriceAction'] = grouped_df['PriceChange']
+            if is_streamlit_context:
+                st.info("Mapped 'PriceChange' to 'PriceAction' for categorization")
+        else:
+            # Calculate absolute price change if needed
+            if 'StartPrice' in grouped_df.columns and 'EndPrice' in grouped_df.columns:
+                grouped_df['PriceAction'] = grouped_df.apply(
+                    lambda row: abs(row['EndPrice'] - row['StartPrice']), axis=1)
+                if is_streamlit_context:
+                    st.info("Calculated 'PriceAction' as absolute price change")
+            else:
+                # Last resort - use whatever price data we can find
+                if is_streamlit_context:
+                    st.warning("Missing price data for 'PriceAction' calculation")
+                grouped_df['PriceAction'] = 0
+    
+    # Handle column mapping: check for 'Direction' and if not present, 
+    # try to map from 'Trend' column
+    if 'Direction' not in grouped_df.columns:
+        if 'Trend' in grouped_df.columns:
+            # Map from Trend to Direction
+            trend_direction_map = {'UpTrend': 'positive', 'DownTrend': 'negative'}
+            grouped_df['Direction'] = grouped_df['Trend'].map(trend_direction_map)
+            if is_streamlit_context:
+                st.info("Mapped 'Trend' column to 'Direction' for analysis")
+        else:
+            # Create Direction based on price movement if neither column exists
+            if is_streamlit_context:
+                st.warning("Neither 'Direction' nor 'Trend' columns found. Creating direction based on price movement.")
+            if 'PricePct' in grouped_df.columns:
+                grouped_df['Direction'] = grouped_df['PricePct'].apply(
+                    lambda x: 'positive' if x >= 0 else 'negative')
+            elif all(col in grouped_df.columns for col in ['StartPrice', 'EndPrice']):
+                grouped_df['Direction'] = grouped_df.apply(
+                    lambda row: 'positive' if row['EndPrice'] >= row['StartPrice'] 
+                                else 'negative', axis=1)
+            else:
+                st.error("Cannot determine direction: missing required price columns")
+                return pd.DataFrame(), pd.DataFrame(), df[df['Action'] == 'Reversal'].copy()
 
     # Split positive vs. negative
-    pos_df = grouped_df[grouped_df['Direction'] == 'positive'].copy()
-    neg_df = grouped_df[grouped_df['Direction'] == 'negative'].copy()
+    try:
+        pos_df = grouped_df[grouped_df['Direction'] == 'positive'].copy()
+        neg_df = grouped_df[grouped_df['Direction'] == 'negative'].copy()
+    except KeyError:
+        st.error("Failed to filter by direction - check column mapping")
+        return pd.DataFrame(), pd.DataFrame(), df[df['Action'] == 'Reversal'].copy()
 
     # Categorize
-    _, pos_grouped_stats = categorize_countermoves(pos_df, group_by='PricePct')
-    _, neg_grouped_stats = categorize_countermoves(neg_df, group_by='PricePct')
+    try:
+        if not pos_df.empty and 'PricePct' in pos_df.columns and 'PriceAction' in pos_df.columns:
+            _, pos_grouped_stats = categorize_countermoves(pos_df, group_by='PricePct')
+        else:
+            if pos_df.empty:
+                if is_streamlit_context:
+                    st.info("No positive countermoves found")
+            else:
+                if is_streamlit_context:
+                    st.warning(f"Missing required columns in positive data. Available: {list(pos_df.columns)}")
+            pos_grouped_stats = pd.DataFrame()
+            
+        if not neg_df.empty and 'PricePct' in neg_df.columns and 'PriceAction' in neg_df.columns:
+            _, neg_grouped_stats = categorize_countermoves(neg_df, group_by='PricePct')
+        else:
+            if neg_df.empty:
+                if is_streamlit_context:
+                    st.info("No negative countermoves found")
+            else:
+                if is_streamlit_context:
+                    st.warning(f"Missing required columns in negative data. Available: {list(neg_df.columns)}")
+            neg_grouped_stats = pd.DataFrame()
+            
+    except Exception as e:
+        st.exception(e)
+        pos_grouped_stats = pd.DataFrame()
+        neg_grouped_stats = pd.DataFrame()
 
     # Also return the raw Reversal rows from df for potential display
     reversals = df[df['Action'] == 'Reversal'].copy()
@@ -1087,12 +1173,12 @@ def show_statistics_tab(result_df):
 
     # Debug info for durations
     st.subheader("Debug Information - Grouped Stats")
-    if not pos_grouped_stats.empty:
+    if isinstance(pos_grouped_stats, pd.DataFrame) and not pos_grouped_stats.empty:
         st.write("Positive Countermoves Duration Check:")
         for _, row in pos_grouped_stats.iterrows():
             st.write(f"{row['SizeGroup']}: {row['AvgDuration']:.2f} minutes")
 
-    if not neg_grouped_stats.empty:
+    if isinstance(neg_grouped_stats, pd.DataFrame) and not neg_grouped_stats.empty:
         st.write("Negative Countermoves Duration Check:")
         for _, row in neg_grouped_stats.iterrows():
             st.write(f"{row['SizeGroup']}: {row['AvgDuration']:.2f} minutes")
@@ -1102,16 +1188,32 @@ def show_statistics_tab(result_df):
     os.makedirs(stats_dir, exist_ok=True)
     date_str = result_df['Datetime'].iloc[0].strftime('%Y%m%d')
     stats_file = os.path.join(stats_dir, f"countermove_analysis_{date_str}.json")
-    save_analysis_results(pos_grouped_stats, neg_grouped_stats, stats_file)
-    st.success(f"Statistics saved to {stats_file}")
+    
+    # Convert to DataFrames if not already
+    if not isinstance(pos_grouped_stats, pd.DataFrame):
+        pos_df = pd.DataFrame() if not pos_grouped_stats else pd.DataFrame(pos_grouped_stats)
+    else:
+        pos_df = pos_grouped_stats
+        
+    if not isinstance(neg_grouped_stats, pd.DataFrame):
+        neg_df = pd.DataFrame() if not neg_grouped_stats else pd.DataFrame(neg_grouped_stats)
+    else:
+        neg_df = neg_grouped_stats
+    
+    try:
+        save_analysis_results(pos_df, neg_df, stats_file)
+        st.success(f"Statistics saved to {stats_file}")
+    except Exception as e:
+        st.error(f"Error saving statistics: {str(e)}")
+        st.exception(e)
 
     # Display data frames
     st.subheader("Detailed Statistics")
-    if not pos_grouped_stats.empty:
+    if isinstance(pos_grouped_stats, pd.DataFrame) and not pos_grouped_stats.empty:
         st.write("Positive Countermoves by Size:")
         st.dataframe(pos_grouped_stats)
     
-    if not neg_grouped_stats.empty:
+    if isinstance(neg_grouped_stats, pd.DataFrame) and not neg_grouped_stats.empty:
         st.write("Negative Countermoves by Size:")
         st.dataframe(neg_grouped_stats)
 
